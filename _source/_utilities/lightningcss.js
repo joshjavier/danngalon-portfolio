@@ -4,7 +4,7 @@ process CSS files with PostCSS
 const lighting = require('lightningcss');
 const path = require('node:path');
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addTemplateFormats('css');
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',

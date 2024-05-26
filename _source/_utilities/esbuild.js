@@ -4,7 +4,7 @@ process JS files with esbuild
 const esbuild = require('esbuild');
 const path = require('node:path');
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addTemplateFormats('js');
   eleventyConfig.addExtension('js', {
     outputFileExtension: 'js',

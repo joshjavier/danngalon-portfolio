@@ -10,7 +10,7 @@ const markdownify = require('./_source/_utilities/markdownify.js');
 const sortBy = require('./_source/_utilities/sortBy.js');
 const where = require('./_source/_utilities/where.js');
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
   /* --------------------------------------------------------------------------
   Plugins, shortcodes, filters
   -------------------------------------------------------------------------- */
