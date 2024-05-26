@@ -1,7 +1,8 @@
 /* ----------------------------------------------------------------------------
 process CSS files with PostCSS
 ---------------------------------------------------------------------------- */
-const lighting = require('lightningcss');
+const browserslist = require('browserslist');
+const { browserslistToTargets, bundleAsync } = require('lightningcss');
 const path = require('node:path');
 
 module.exports = (eleventyConfig) => {
@@ -14,8 +15,8 @@ module.exports = (eleventyConfig) => {
         return undefined;
       }
       const files = [];
-      const targets = { future: (1) }; // enables draft syntaxes
-      const result = await lighting.bundleAsync({
+      const targets = browserslistToTargets(browserslist());
+      const result = await bundleAsync({
         filename: inputPath,
         minify: true,
         sourceMap: true,

@@ -5,6 +5,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.3",
     "@11ty/eleventy-img": "^3.0.0",
+    "browserslist": "^4.23.0",
     "esbuild": "^0.19.2",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -19,5 +20,8 @@
     "publish:prod": "ELEVENTY_ENV=prod eleventy",
     "lint:css": "stylelint \"_source/**/*.css\" --fix",
     "lint:js": "eslint \"_source/**/*.js\" --fix"
-  }
+  },
+  "browserslist": [
+    "last 2 versions, not dead, > 0.2%"
+  ]
 }
