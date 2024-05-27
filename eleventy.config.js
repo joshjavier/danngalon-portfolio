@@ -10,6 +10,7 @@ const markdownify = require('./_source/_utilities/markdownify.js');
 const sortBy = require('./_source/_utilities/sortBy.js');
 const where = require('./_source/_utilities/where.js');
 
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = (eleventyConfig) => {
   /* --------------------------------------------------------------------------
   Plugins, shortcodes, filters
@@ -39,6 +40,19 @@ module.exports = (eleventyConfig) => {
   -------------------------------------------------------------------------- */
   eleventyConfig.addPassthroughCopy('_source/assets/fonts');
   eleventyConfig.addPassthroughCopy('_source/assets/images');
+
+  /* --------------------------------------------------------------------------
+  Collections
+  -------------------------------------------------------------------------- */
+  eleventyConfig.addCollection('campaign', (collectionApi) => {
+    const campaigns = collectionApi.getAll().filter((item) => item.data.category === 'Campaigns');
+    return campaigns.sort((a, b) => a.data.order - b.data.order);
+  });
+
+  eleventyConfig.addCollection('specialProject', (collectionApi) => {
+    const specialProjects = collectionApi.getAll().filter((item) => item.data.category === 'Special Projects');
+    return specialProjects.sort((a, b) => a.data.order - b.data.order);
+  });
 
   return {
     dir: {

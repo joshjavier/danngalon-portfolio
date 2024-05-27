@@ -1,0 +1,33 @@
+---
+layout: page.html
+---
+
+<section>
+  <h2>Articles</h2>
+
+  <ul>
+    {%- for article in articles %}
+      <li><a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a></li>
+    {%- endfor %}
+    </ul>
+</section>
+
+<section>
+  <h2>Campaigns</h2>
+
+  <ul>
+  {%- for campaign in collections.campaign %}
+    <li><a href="{{ campaign.page.url }}">{{ campaign.data.title }}</a></li>
+  {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Special Projects</h2>
+
+  <ul>
+  {%- for specialProject in collections.specialProject %}
+    <li><a href="{{ specialProject.page.url }}">{{ specialProject.data.title }}</a></li>
+  {%- endfor %}
+  </ul>
+</section>
