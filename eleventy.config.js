@@ -1,6 +1,6 @@
 const markdownIt = require('markdown-it');
 const esbuild = require('./_source/_utilities/esbuild.js');
-const lightingcss = require('./_source/_utilities/lightningcss.js');
+const lightningcss = require('./_source/_utilities/lightningcss.js');
 const image = require('./_source/_utilities/image.js');
 const style = require('./_source/_utilities/style.js');
 const setVar = require('./_source/_utilities/setVar.js');
@@ -16,7 +16,7 @@ module.exports = (eleventyConfig) => {
   Plugins, shortcodes, filters
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(esbuild);
-  eleventyConfig.addPlugin(lightingcss);
+  eleventyConfig.addPlugin(lightningcss);
   eleventyConfig.addShortcode('image', image);
   eleventyConfig.addPairedShortcode('setVar', setVar);
   eleventyConfig.addPairedShortcode('style', style);
