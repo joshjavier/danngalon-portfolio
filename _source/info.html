@@ -1,0 +1,16 @@
+---
+layout: page.html
+title: About Me
+---
+
+<h1>About me</h1>
+
+<p>Writing has always been my bread and butter, but being able to weave that with strategy is pretty fulfilling.</p>
+<p>My diverse background in journalism, PR, events, and online media has sharpened my ability to craft engaging and informative content, from technical manuals to captivating narratives.</p>
+<p><strong>Let's chat!</strong> Whether you have a project in mind or simply want to brainstorm creative possibilities, I’m down to connect. 💬</p>
+
+<h2>Contact</h2>
+<ul>
+  <li><a href="{{ contact.email | prepend: 'mailto:' | hexEncode }}">{{ contact.email | hexEncode }}</a></li>
+  <li><a href="{{ contact.linkedin.url }}">{{ contact.linkedin.text }}</a></li>
+</ul>
