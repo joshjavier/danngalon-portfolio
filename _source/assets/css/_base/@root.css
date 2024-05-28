@@ -6,17 +6,53 @@
   --color-peach: 10deg 100% 85%;
   --color-charcoal: 40deg 2% 15%;
 
+  /* neutral colors */
+  --color-light:         52deg  94%  94%;
+  --color-light-mod-1:   53deg  43%  88%;
+  --color-light-mod-2:   60deg  15%  77%;
+  --color-dark:         200deg   6%  38%;
+  --color-dark-mod-1:   188deg   4%  44%;
+  --color-dark-mod-2:   108deg   2%  55%;
+  --color-dark-tint-10: 202deg   6%  34%;
+  --color-dark-tint-30: 203deg   6%  27%;
+  --color-dark-tint-60: 192deg   6%  15%;
+
+  /* brand colors */
+  --color-primary:             97deg  29%  43%;
+  --color-primary-tint:        66deg  43%  85%;
+  --color-primary-tint-30:     90deg  24%  58%;
+  --color-primary-tint-10:     96deg  24%  48%;
+  --color-primary-shade:      115deg  11%  41%;
+  --color-primary-shade-10:    98deg  26%  43%;
+  --color-primary-shade-30:   100deg  20%  42%;
+  --color-secondary:           45deg 100%  70%;
+  --color-secondary-shade-10:  46deg  81%  67%;
+  --color-secondary-shade-30:  46deg  51%  61%;
+  --color-secondary-shade:     48deg  22%  51%;
+  --color-secondary-tint-10:   46deg 100%  72%;
+  --color-secondary-tint-30:   46deg 100%  77%;
+  --color-secondary-tint:      48deg  96%  90%;
+
   /* semantic color themes */
-  --color-text-hsl: var(--color-charcoal);
-  --color-text: hsl(var(--color-charcoal) / var(--color-alpha));
-  --color-sheet-hsl: var(--color-peach);
-  --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
+  --color-info:          205deg  95%  44%;
+  --color-info-tint:     206deg  76%  92%;
+  --color-positive:      130deg  87%  35%;
+  --color-positive-tint: 130deg  47%  90%;
+  --color-caution:        25deg  87%  51%;
+  --color-caution-tint:   25deg  89%  93%;
+  --color-negative:        4deg  58%  49%;
+  --color-negative-tint:  30deg  73%  87%;
+
+  --color-text-hsl: var(--color-dark);
+  --color-text: hsl(var(--color-dark) / var(--color-alpha));
+  --color-sheet-hsl: var(--color-light);
+  --color-sheet: hsl(var(--color-light) / var(--color-alpha));
 
   @media (prefers-color-scheme: dark) {
-    --color-text-hsl: var(--color-peach);
-    --color-text: hsl(var(--color-peach) / var(--color-alpha));
-    --color-sheet-hsl: var(--color-charcoal);
-    --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
+    --color-text-hsl: var(--color-light);
+    --color-text: hsl(var(--color-light) / var(--color-alpha));
+    --color-sheet-hsl: var(--color-dark);
+    --color-sheet: hsl(var(--color-dark) / var(--color-alpha));
   }
 
   /* ---------------------------------------------------------------------------
