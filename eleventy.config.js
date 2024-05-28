@@ -9,6 +9,7 @@ const getRandom = require('./_source/_utilities/getRandom.js');
 const markdownify = require('./_source/_utilities/markdownify.js');
 const sortBy = require('./_source/_utilities/sortBy.js');
 const where = require('./_source/_utilities/where.js');
+const hexEncode = require('./_source/_utilities/hexEncode.js');
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = (eleventyConfig) => {
@@ -25,6 +26,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('markdownify', markdownify);
   eleventyConfig.addFilter('sortBy', sortBy);
   eleventyConfig.addFilter('where', where);
+  eleventyConfig.addFilter('hexEncode', hexEncode);
 
   /* --------------------------------------------------------------------------
   MarkdownIt settings
