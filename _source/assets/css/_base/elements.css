@@ -9,7 +9,10 @@ element styles
   margin: 0;
   padding: 0;
   color: var(--color-text);
-  font-variation-settings: "wght" var(--text-weight), "wdth" var(--text-width);
+  font-variation-settings:
+    "wght" var(--text-weight),
+    "SOFT" 100,
+    "WONK" 0;
 
   &::selection {
     color: var(--color-sheet);
@@ -18,7 +21,6 @@ element styles
 }
 
 html {
-  font-size: 10px;
   min-height: 100dvh;
   background-color: var(--color-sheet);
 }
@@ -30,8 +32,8 @@ body {
   min-height: 100dvh;
   overflow-x: clip;
   font-family: var(--text-main);
-  font-size: var(--text-base);
-  line-height: var(--text-leading-fluid);
+  font-size: var(--step-0);
+  line-height: var(--text-leading-default);
   background-color: var(--color-sheet);
 }
 
@@ -39,43 +41,48 @@ animate-on-scroll {
   display: contents;
 }
 
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, pre, blockquote) {
-  line-height: var(--text-leading-fluid);
+:where(p, ul, ol, dl, li, pre, blockquote) {
+  line-height: var(--text-leading-prose);
+}
+
+:where(h2, h3, h4, h5, h6) {
+  line-height: var(--text-leading-default);
 }
 
 h1 {
   --text-weight: 300;
 
   margin: var(--space-xl) 0 var(--space-m) 0;
-  font-size: var(--text-xxl);
+  font-size: var(--step-6);
+  line-height: var(--text-leading-display);
   letter-spacing: var(--text-spacing-s);
 }
 
 h2 {
   --text-weight: 500;
-  --text-width: var(--text-width-s);
+  /* --text-width: var(--text-width-s); */
 
   margin: var(--space-l) 0 var(--space-s) 0;
-  font-size: var(--text-xl);
+  font-size: var(--step-3);
   text-transform: uppercase;
   border-bottom: var(--border-weight-s) solid var(--color-text);
 }
 
 h3 {
   --text-weight: 500;
-  --text-width: var(--text-width-s);
+  /* --text-width: var(--text-width-s); */
 
   margin: var(--space-m) 0 0 0;
-  font-size: var(--text-l);
+  font-size: var(--step-1);
   text-transform: uppercase;
 }
 
 :where(h4, h5, h6) {
   --text-weight: 400;
-  --text-width: var(--text-width-s);
+  /* --text-width: var(--text-width-s); */
 
   margin: var(--space-s) 0 0 0;
-  font-size: var(--text-m);
+  font-size: var(--step-0);
   text-transform: uppercase;
 }
 
@@ -103,7 +110,7 @@ li {
 
   & :where(ul, ol) {
     margin-left: var(--space-m);
-    font-size: var(--text-m);
+    font-size: var(--step-0);
   }
 }
 
@@ -118,7 +125,7 @@ em {
 }
 
 small {
-  font-size: var(--text-s);
+  font-size: var(--step--1);
 }
 
 a,
@@ -136,7 +143,7 @@ code {
   --bg-color: var(--color-text-hsl);
   --alpha: 10%;
 
-  font-family: var(--text-main);
+  font-family: var(--text-mono);
   padding: var(--space-3xs);
   padding-top: calc(var(--space-3xs) * 1.375);
   border-radius: var(--border-radius-s);
@@ -145,7 +152,7 @@ code {
 
 blockquote {
   margin: var(--space-l) 0;
-  font-size: var(--text-m);
+  font-size: var(--step-0);
   font-style: italic;
 }
 

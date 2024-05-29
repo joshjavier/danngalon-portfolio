@@ -109,19 +109,12 @@
   text properties
   --------------------------------------------------------------------------- */
 
-  /* font stacks */
-  --text-main:
-    "Trispace",
-    -apple-system,
-    blinkmacsystemfont,
-    "Segoe UI",
-    roboto,
-    helvetica,
-    arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  /* font stacks via https://modernfontstacks.com */
+  --text-serif: Fraunces, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --text-sans: Urbanist, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --text-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  --text-main: var(--text-serif);
 
   /* size */
   --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
@@ -139,6 +132,25 @@
   --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-l));
   --text-poster: clamp(4.5rem, 8vw, 10rem);
   --text-poster-l: clamp(5.5rem, 9vw, 12rem);
+
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1480,20,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l&g=s,l,2xl,12 */
+
+  /* Step -1: 15px → 16px */
+  --step--1: clamp(0.9375rem, 0.9203rem + 0.0862vi, 1rem);
+  /* Step 0: 18px → 20px */
+  --step-0: clamp(1.125rem, 1.0905rem + 0.1724vi, 1.25rem);
+  /* Step 1: 21.6px → 25px */
+  --step-1: clamp(1.35rem, 1.2914rem + 0.2931vi, 1.5625rem);
+  /* Step 2: 25.92px → 31.25px */
+  --step-2: clamp(1.62rem, 1.5281rem + 0.4595vi, 1.9531rem);
+  /* Step 3: 31.104px → 39.0625px */
+  --step-3: clamp(1.944rem, 1.8068rem + 0.6861vi, 2.4414rem);
+  /* Step 4: 37.3248px → 48.8281px */
+  --step-4: clamp(2.3328rem, 2.1345rem + 0.9917vi, 3.0518rem);
+  /* Step 5: 44.7898px → 61.0352px */
+  --step-5: clamp(2.7994rem, 2.5193rem + 1.4005vi, 3.8147rem);
+  /* Step 6: 53.7477px → 76.2939px */
+  --step-6: clamp(3.3592rem, 2.9705rem + 1.9436vi, 4.7684rem);
 
   /* weight */
   --text-weight: 250;
@@ -162,6 +174,11 @@
   --text-leading-m: calc(var(--text-leading-s) * var(--text-leading-scale));
   --text-leading-l: calc(var(--text-leading-m) * var(--text-leading-scale));
   --text-leading-fluid: calc(0.75rem + 1.25em);
+
+  --text-leading-normal: 1;
+  --text-leading-display: 1.1;
+  --text-leading-default: 1.2;
+  --text-leading-prose: 1.5;
 
   /* letter spacing */
   --text-spacing-s: -0.025em;
