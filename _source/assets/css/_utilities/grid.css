@@ -5,11 +5,10 @@ grid: a simple grid system for page composition
   display: grid;
   align-items: start;
   grid-template-columns: 1fr minmax(80vw, 100%) 1fr;
-  column-gap: min(5vw, 5rem);
+  column-gap: var(--grid-gutter);
 
   @media (--viewport-medium) {
-    grid-template-columns: 1fr repeat(12, minmax(0, 3em)) 1fr;
-    column-gap: min(4vw, 3em);
+    grid-template-columns: 1fr repeat(12, var(--fluid-8-80)) 1fr;
   }
 
   & > .grid {
