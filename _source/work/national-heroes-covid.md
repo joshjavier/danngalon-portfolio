@@ -1,6 +1,7 @@
 ---
 title: Araw ng mga Bayani
 # subtitle: Write something here
+image: ArawngmgaBayani_CampaignCover.png
 cta:
   text: View Here
   url: https://www.facebook.com/HashtagInteractive/posts/3914977058519312

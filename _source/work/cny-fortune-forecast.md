@@ -1,6 +1,7 @@
 ---
 title: CNY Fortune Forecast
 # subtitle: Write something here
+image: CNY_Cover.jpg
 cta:
   text: View Here
   url: https://hashtag-interactive.rocks/cny-web/

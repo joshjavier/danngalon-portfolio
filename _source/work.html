@@ -44,12 +44,21 @@ description: A showcase of Dann Galon's best work, ranging from articles, essays
   </ul>
 </section>
 
-<section>
+<section class="grid__item --span-12">
   <h2>Special Projects</h2>
 
   <ul>
   {%- for specialProject in collections.specialProject %}
-    <li><a href="{{ specialProject.page.url }}">{{ specialProject.data.title }}</a></li>
+    <li class="work-card">
+      <div class="image">
+        {% assign imagePath = specialProject.data.image | prepend: "special-projects/" %}
+        {% image imagePath, "" %}
+      </div>
+      <div class="text">
+        <a href="{{ specialProject.page.url }}" class="title">{{ specialProject.data.title }}</a>
+        <p class="description">Description</p>
+      </div>
+    </li>
   {%- endfor %}
   </ul>
 </section>
