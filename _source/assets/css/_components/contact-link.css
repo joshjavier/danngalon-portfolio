@@ -1,0 +1,5 @@
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-l);
+}

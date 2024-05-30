@@ -207,7 +207,7 @@
   --------------------------------------------------------------------------- */
 
   /* border radius */
-  --border-radius-s: 0.3rem;
+  --border-radius-s: var(--space-s);
   --border-radius-m: 0.6rem;
   --border-radius-l: 0.9rem;
 

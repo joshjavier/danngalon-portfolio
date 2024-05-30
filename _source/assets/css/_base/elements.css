@@ -64,7 +64,7 @@ h2 {
 
   margin: var(--space-l) 0 var(--space-s) 0;
   font-size: var(--step-3);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   border-bottom: var(--border-weight-s) solid var(--color-text);
 }
 
