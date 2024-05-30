@@ -1,6 +1,7 @@
 ---
 title: Dumex
 subtitle: Spread Your Love for Dugro
+image: Dumex_Cover.png
 cta:
   text: View Campaign Here
   url: https://www.facebook.com/dumexclub/photos/a.95504627581/10158325306562582/?type=3

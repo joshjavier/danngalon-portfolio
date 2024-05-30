@@ -1,6 +1,7 @@
 ---
 title: PICK Network (Infocomm Media Development Authority)
 subtitle: Introduction Video
+image: Pick_Cover.png
 cta:
   text: View Here
   url: https://www.facebook.com/watch/?v=293803979046147

@@ -1,6 +1,7 @@
 ---
 title: Civil Aviation Authority of Singapore (CAAS)
 subtitle: '#CAASRealTalk: What do Air Traffic Control Officers (ATCOs) really do?'
+image: CAAS_ATCO Cover Option 2.png
 cta:
   text: View Here
   url: https://www.facebook.com/SingaporeCAAS/posts/366986306142188/?vh=e&extid=MSG-UNK-UNK-UNK-COM_GK0T-GK1C

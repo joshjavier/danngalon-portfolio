@@ -1,5 +1,7 @@
 ---
 layout: page.html
+title: My Work
+description: A showcase of Dann Galon's best work, ranging from articles, essays, marketing campaigns, and special projects.
 ---
 
 <h1 class="grid__item --start-1">My Work</h1>
@@ -23,12 +25,21 @@ layout: page.html
     </ul>
 </section>
 
-<section>
+<section class="grid__item --span-12">
   <h2>Campaigns</h2>
 
   <ul>
   {%- for campaign in collections.campaign %}
-    <li><a href="{{ campaign.page.url }}">{{ campaign.data.title }}</a></li>
+    <li class="work-card">
+      <div class="image">
+        {% assign imagePath = campaign.data.image | prepend: "campaigns/" %}
+        {% image imagePath, "" %}
+      </div>
+      <div class="text">
+        <a href="{{ campaign.page.url }}" class="title">{{ campaign.data.title }}</a>
+        <p class="description">Description</p>
+      </div>
+    </li>
   {%- endfor %}
   </ul>
 </section>
