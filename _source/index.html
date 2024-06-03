@@ -30,6 +30,40 @@ featuredWorks:
   <span class="grid__item --span-12 text --sans --uppercase">Scroll down to see my featured works</span>
 </article>
 
+<section class="featured-works">
+  <h2 class="display --sr-only">Featured Works</h2>
+  <div class="aptamil">
+    <div class="image"></div>
+    <div class="text">
+      <h3>{{ featuredWorks[0].title }}</h3>
+      <p>{{ featuredWorks[0].description }}</p>
+      <a href="{{ featuredWorks[0].cta.url }}" class="button">
+        {{ featuredWorks[0].cta.text }}
+      </a>
+    </div>
+  </div>
+  <div class="hyped">
+    <div class="image"></div>
+    <div class="text">
+      <h3>{{ featuredWorks[1].title }}</h3>
+      <p>{{ featuredWorks[1].description }}</p>
+      <a href="{{ featuredWorks[1].cta.url }}" target="_blank" rel="noopener noreferrer" class="button" >
+        {{ featuredWorks[1].cta.text }}
+      </a>
+    </div>
+  </div>
+  <div class="bayani">
+    <div class="image"></div>
+    <div class="text">
+      <h3>{{ featuredWorks[2].title }}</h3>
+      <p>{{ featuredWorks[2].description }}</p>
+      <a href="{{ featuredWorks[2].cta.url }}" class="button" >
+        {{ featuredWorks[2].cta.text }}
+      </a>
+    </div>
+  </div>
+</section>
+
 {% style %}
 .hero {
   min-height: calc(100vh - 124px);
