@@ -42,6 +42,7 @@ module.exports = (eleventyConfig) => {
   -------------------------------------------------------------------------- */
   eleventyConfig.addPassthroughCopy('_source/assets/fonts');
   eleventyConfig.addPassthroughCopy('_source/assets/images');
+  eleventyConfig.addPassthroughCopy('_source/assets/videos');
 
   /* --------------------------------------------------------------------------
   Collections
