@@ -104,7 +104,7 @@ ol {
 li {
   position: relative;
 
-  &:where(li + li) {
+  :not([role=list]) > & + & {
     margin: var(--space-xs) 0 0 0;
   }
 
