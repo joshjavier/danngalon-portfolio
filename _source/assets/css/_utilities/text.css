@@ -53,6 +53,7 @@ font: transform text display properties
   &.--leading-m { line-height: var(--text-leading-m); }
   &.--leading-l { line-height: var(--text-leading-l); }
   &.--leading-fluid { line-height: var(--text-leading-fluid); }
+  &.--leading-default { line-height: var(--text-leading-default); }
 
   &.--spacing-s { letter-spacing: var(--text-spacing-s); }
   &.--spacing-m { letter-spacing: var(--text-spacing-m); }
@@ -63,4 +64,8 @@ font: transform text display properties
   &.--uppercase { text-transform: uppercase; }
   &.--unlisted { list-style-type: none; }
   &.--undecorated { text-decoration: none; }
+
+  &.--serif { font-family: var(--text-serif); }
+  &.--sans { font-family: var(--text-sans); }
+  &.--mono { font-family: var(--text-mono); }
 }
