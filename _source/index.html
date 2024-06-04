@@ -30,38 +30,41 @@ featuredWorks:
   <span class="grid__item --span-12 text --sans --uppercase">Scroll down to see my featured works</span>
 </article>
 
-<section class="featured-works">
+<section class="featured-works grid">
   <h2 class="display --sr-only">Featured Works</h2>
-  <div class="aptamil">
+  <article class="aptamil grid">
     <div class="image"></div>
     <div class="text">
       <h3>{{ featuredWorks[0].title }}</h3>
       <p>{{ featuredWorks[0].description }}</p>
-      <a href="{{ featuredWorks[0].cta.url }}" class="button">
-        {{ featuredWorks[0].cta.text }}
+      <a href="{{ featuredWorks[0].cta.url }}" class="button --primary">
+        <span>{{ featuredWorks[0].cta.text }}</span>
+        {% render "svg/chevron-right.svg" %}
       </a>
     </div>
-  </div>
-  <div class="hyped">
+  </article>
+  <article class="hyped grid">
     <div class="image"></div>
     <div class="text">
       <h3>{{ featuredWorks[1].title }}</h3>
       <p>{{ featuredWorks[1].description }}</p>
-      <a href="{{ featuredWorks[1].cta.url }}" target="_blank" rel="noopener noreferrer" class="button" >
-        {{ featuredWorks[1].cta.text }}
+      <a href="{{ featuredWorks[1].cta.url }}" target="_blank" rel="noopener noreferrer" class="button --primary" >
+        <span>{{ featuredWorks[1].cta.text }}</span>
+        {% render "svg/link.svg" %}
       </a>
     </div>
-  </div>
-  <div class="bayani">
+  </article>
+  <article class="bayani grid">
     <div class="image"></div>
     <div class="text">
       <h3>{{ featuredWorks[2].title }}</h3>
       <p>{{ featuredWorks[2].description }}</p>
-      <a href="{{ featuredWorks[2].cta.url }}" class="button" >
-        {{ featuredWorks[2].cta.text }}
+      <a href="{{ featuredWorks[2].cta.url }}" class="button --primary" >
+        <span>{{ featuredWorks[2].cta.text }}</span>
+        {% render "svg/chevron-right.svg" %}
       </a>
     </div>
-  </div>
+  </article>
 </section>
 
 {% style %}
@@ -85,6 +88,29 @@ featuredWorks:
     margin-left: auto;
     margin-top: auto;
     margin-bottom: 5vh;
+  }
+}
+
+.featured-works {
+  > article {
+    min-height: 80vh;
+
+    > .text {
+      grid-column-start: 9;
+      grid-column-end: span 4;
+
+      & h3 {
+        margin-block: 0 var(--space-xs);
+        font-size: var(--step-2);
+        --text-weight: 650;
+      }
+
+      & p {
+        margin-bottom: var(--space-l);
+        font-family: var(--text-sans);
+        color: hsl(var(--color-dark-mod-2));
+      }
+    }
   }
 }
 {% endstyle %}
