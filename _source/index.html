@@ -33,7 +33,9 @@ featuredWorks:
 <section class="featured-works grid">
   <h2 class="display --sr-only">Featured Works</h2>
   <article class="aptamil grid">
-    <div class="image"></div>
+    <div class="image grid__item --bleed-left --span-8">
+      {% image "campaigns/Aptami_Cover.webp", "" %}
+    </div>
     <div class="text">
       <h3>{{ featuredWorks[0].title }}</h3>
       <p>{{ featuredWorks[0].description }}</p>
@@ -111,6 +113,11 @@ featuredWorks:
         color: hsl(var(--color-dark-mod-2));
       }
     }
+  }
+
+  /* Optical adjustments */
+  > .aptamil .text {
+    margin-top: 22vh;
   }
 }
 {% endstyle %}
