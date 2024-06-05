@@ -27,7 +27,7 @@ featuredWorks:
     Dann Galon is a <span class="text --weight-400">writer</span> and <span class="text --weight-400">creative media professional</span> fluent in storytelling, ideation, and strategy.
   </p>
   <button class="button grid__item --start-2 text --sans --uppercase --step-3">Say Hi 👋</button>
-  <span class="grid__item --span-12 text --sans --uppercase">Scroll down to see my featured works</span>
+  <span class="grid__item --span-12 text --sans --uppercase --align-right">Scroll down to see my featured works</span>
 </article>
 
 <section class="featured-works grid">
@@ -58,12 +58,25 @@ featuredWorks:
       </a>
     </div>
   </article>
-  <article class="bayani grid">
-    <div class="image"></div>
-    <div class="content grid__item --start-8 --span-4">
+  <article class="bayani grid color --set-sheet">
+    <div class="image grid__item --start-2 --align-center">
+      <div class="strip">
+        <div class="poster">{% image "special-projects/frame-5.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-4.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-6.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-5.jpg", "" %}</div>
+      </div>
+      <div class="strip">
+        <div class="poster">{% image "special-projects/frame-1.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-2.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-3.jpg", "" %}</div>
+        <div class="poster">{% image "special-projects/frame-1.jpg", "" %}</div>
+      </div>
+    </div>
+    <div class="content grid__item --start-8 --span-4 --align-center">
       <h3>{{ featuredWorks[2].title }}</h3>
       <p>{{ featuredWorks[2].description }}</p>
-      <a href="{{ featuredWorks[2].cta.url }}" class="button --primary" >
+      <a href="{{ featuredWorks[2].cta.url }}" class="button" >
         <span>{{ featuredWorks[2].cta.text }}</span>
         {% render "svg/chevron-right.svg" %}
       </a>
@@ -77,8 +90,12 @@ featuredWorks:
   grid-template-rows: max-content;
 
   & p {
-    margin-top: 10vh;
+    margin-top: 10vmin;
     margin-bottom: var(--space-xl-2xl);
+
+    > span { --color-text: hsl(var(--color-primary)); }
+    @media (min-width: 45em) { grid-column-end: span 9; }
+    @media (min-width: 90em) { grid-column-end: span 7; }
   }
 
   & button {
@@ -96,8 +113,15 @@ featuredWorks:
 }
 
 .featured-works {
+  @media (max-width: 44.999em) {
+    row-gap: var(--space-4xl);
+    margin-top: var(--space-4xl);
+  }
+
   > article {
-    min-height: 80vh;
+    @media (min-width: 45em) {
+      min-height: 100vh;
+    }
 
     > .content {
       & h3 {
@@ -109,7 +133,7 @@ featuredWorks:
       & p {
         margin-bottom: var(--space-l);
         font-family: var(--text-sans);
-        color: hsl(var(--color-dark-mod-2));
+        --color-text: hsl(var(--color-dark-mod-2));
       }
     }
   }
@@ -125,8 +149,35 @@ featuredWorks:
       }
     }
 
-    > .content {
-      margin-top: -13vh;
+    @media (min-width: 45em) {
+      > .content {
+        margin-top: calc(var(--space-2xl-3xl) * -1);
+      }
+    }
+  }
+
+  > .bayani {
+    --color-sheet: hsl(var(--color-primary));
+
+    > .image {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      gap: var(--space-l);
+
+      @media (max-width: 44.999em) {
+        flex-direction: column;
+      }
+
+      @media (min-width: 45em) {
+        > :nth-child(1) { margin-top: -10vh; }
+        > :nth-child(2) { margin-top: -30vh; }
+      }
+
+    }
+
+    > .content * {
+      --color-text: hsl(var(--color-light));
     }
   }
 }
