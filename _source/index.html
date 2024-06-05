@@ -33,10 +33,10 @@ featuredWorks:
 <section class="featured-works grid">
   <h2 class="display --sr-only">Featured Works</h2>
   <article class="aptamil grid">
-    <div class="image grid__item --bleed-left --span-8">
+    <div class="image grid__item --bleed-left --span-8 --align-center">
       {% image "campaigns/Aptami_Cover.webp", "" %}
     </div>
-    <div class="text">
+    <div class="content grid__item --start-8 --span-4 --align-center">
       <h3>{{ featuredWorks[0].title }}</h3>
       <p>{{ featuredWorks[0].description }}</p>
       <a href="{{ featuredWorks[0].cta.url }}" class="button --primary">
@@ -46,8 +46,10 @@ featuredWorks:
     </div>
   </article>
   <article class="hyped grid">
-    <div class="image"></div>
-    <div class="text">
+    <div class="image grid__item --start-2 --align-center">
+      {% image "hyped-and-hashtagged-2021-book-cover.png", "" %}
+    </div>
+    <div class="content grid__item --start-8 --span-4 --align-center">
       <h3>{{ featuredWorks[1].title }}</h3>
       <p>{{ featuredWorks[1].description }}</p>
       <a href="{{ featuredWorks[1].cta.url }}" target="_blank" rel="noopener noreferrer" class="button --primary" >
@@ -58,7 +60,7 @@ featuredWorks:
   </article>
   <article class="bayani grid">
     <div class="image"></div>
-    <div class="text">
+    <div class="content grid__item --start-8 --span-4">
       <h3>{{ featuredWorks[2].title }}</h3>
       <p>{{ featuredWorks[2].description }}</p>
       <a href="{{ featuredWorks[2].cta.url }}" class="button --primary" >
@@ -97,10 +99,7 @@ featuredWorks:
   > article {
     min-height: 80vh;
 
-    > .text {
-      grid-column-start: 9;
-      grid-column-end: span 4;
-
+    > .content {
       & h3 {
         margin-block: 0 var(--space-xs);
         font-size: var(--step-2);
@@ -116,8 +115,19 @@ featuredWorks:
   }
 
   /* Optical adjustments */
-  > .aptamil .text {
-    margin-top: 22vh;
+  > .hyped {
+    > .image img {
+      transform: rotate(-4deg);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(0) scale(1.1);
+      }
+    }
+
+    > .content {
+      margin-top: -13vh;
+    }
   }
 }
 {% endstyle %}
