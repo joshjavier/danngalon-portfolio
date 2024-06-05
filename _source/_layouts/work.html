@@ -25,17 +25,11 @@ layout: page
 </section>
 
 <section class="media grid__item --start-5 --bleed-full">
+  {% if page.reel %}
   <media-reel>
-    <video controls>
-      <source src="/assets/videos/Aptamil Campaign Video.mp4">
-    </video>
-    <video controls>
-      <source src="/assets/videos/Aptamil-Social Video.mp4">
-    </video>
-    {% image "campaigns/Image 1.png", "" %}
-    {% image "campaigns/Image 2.png", "" %}
-    {% image "campaigns/Image 3.png", "" %}
+    {{ page.reel }}
   </media-reel>
+  {% endif %}
 </section>
 
 {% style %}

@@ -10,6 +10,8 @@ const markdownify = require('./_source/_utilities/markdownify.js');
 const sortBy = require('./_source/_utilities/sortBy.js');
 const where = require('./_source/_utilities/where.js');
 const hexEncode = require('./_source/_utilities/hexEncode.js');
+const reel = require('./_source/_utilities/reel.js');
+const video = require('./_source/_utilities/video.js');
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = (eleventyConfig) => {
@@ -19,8 +21,10 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(esbuild);
   eleventyConfig.addPlugin(lightningcss);
   eleventyConfig.addShortcode('image', image);
+  eleventyConfig.addShortcode('video', video);
   eleventyConfig.addPairedShortcode('setVar', setVar);
   eleventyConfig.addPairedShortcode('style', style);
+  eleventyConfig.addPairedShortcode('reel', reel);
   eleventyConfig.addFilter('fullDate', fullDate);
   eleventyConfig.addFilter('getRandom', getRandom);
   eleventyConfig.addFilter('markdownify', markdownify);
