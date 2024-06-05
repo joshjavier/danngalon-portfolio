@@ -5,9 +5,11 @@ Liquid: {{ contact.email | hexEncode }}
 ---------------------------------------------------------------------------- */
 
 /** @param {string} value */
-const hexEncode = (value) => value
-  .split('')
-  .map((char) => `&#x${char.charCodeAt().toString(16)};`)
-  .join('');
+function hexEncode(value) {
+  return value
+    .split('')
+    .map((char) => `&#x${char.charCodeAt().toString(16)};`)
+    .join('');
+}
 
 module.exports = hexEncode;
