@@ -16,3 +16,8 @@ order: 4
 ---
 
 As Singapore's aviation industry rebounds from the COVID-19 pandemic, the Civil Aviation Authority of Singapore (CAAS) kicked off a recruitment drive for air traffic control officers.
+
+{% reel %}
+  {% video "CAAS RealTalk.mp4" %}
+  {% video "DONT USE-CAAS-BeinganATCO.mp4" %}
+{% endreel %}

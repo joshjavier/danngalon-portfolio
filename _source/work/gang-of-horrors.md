@@ -17,3 +17,8 @@ order: 1
 ---
 
 For Halloween 2019, the goal is to showcase real-life work “horrors” that haunt the agency life with whimsical characters.
+
+{% reel %}
+  {% image "special-projects/halloween-1.jpg", "" %}
+  {% image "special-projects/halloween-2.jpg", "" %}
+{% endreel %}

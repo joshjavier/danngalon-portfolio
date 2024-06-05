@@ -16,3 +16,7 @@ order: 6
 ---
 
 The Ministry of Finance (MOF) required a public awareness campaign to effectively break down the details of Budget 2024 and its allocations.
+
+{% reel %}
+  {% video "MOF Answers Budget 2024 Edition - Majulah Package.mp4" %}
+{% endreel %}
