@@ -3,17 +3,18 @@ layout: page.html
 title: About Me
 ---
 
-<section class="grid space --top-4xl">
+<section class="aboutme grid space --top-4xl">
   <div class="content grid__item --start-2 --span-5">
-    <h1 class="text --step-5 --weight-400 space --bottom-xl --top-flush">
-      About
-      <span class="text --italic">me</span>
-    </h1>
+    <h1 class="display --sr-only">About me</h1>
+    <p class="title text --step-5 --weight-400 --leading-display space --bottom-xl --top-flush">
+      Hi! I'm
+      <span class="text --italic">Dann</span>
+    </p>
 
     <div class="flow">
       <p>Writing has always been my bread and butter, but being able to weave that with strategy is pretty fulfilling.</p>
       <p>My diverse background in journalism, PR, events, and online media has sharpened my ability to craft engaging and informative content, from technical manuals to captivating narratives.</p>
-      <p><strong>Let's chat!</strong> Whether you have a project in mind or simply want to brainstorm creative possibilities, I’m down to connect. 💬</p>
+      <p>Whether you have a project in mind or simply want to brainstorm creative possibilities, I’m down to connect. 💬</p>
     </div>
   </div>
 
@@ -41,13 +42,13 @@ title: About Me
 </section>
 
 {% style %}
-h1 {
+.title {
   --color-text: hsl(var(--color-primary));
   position: relative;
   width: max-content;
 }
 
-h1:after {
+.title:after {
   content: '';
   background-image: url('/assets/images/sparkles.png');
   background-repeat: no-repeat;

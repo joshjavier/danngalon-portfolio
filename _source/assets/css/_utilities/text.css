@@ -54,6 +54,7 @@ font: transform text display properties
   &.--leading-l { line-height: var(--text-leading-l); }
   &.--leading-fluid { line-height: var(--text-leading-fluid); }
   &.--leading-default { line-height: var(--text-leading-default); }
+  &.--leading-display { line-height: var(--text-leading-display); }
 
   &.--spacing-s { letter-spacing: var(--text-spacing-s); }
   &.--spacing-m { letter-spacing: var(--text-spacing-m); }
