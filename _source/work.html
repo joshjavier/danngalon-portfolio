@@ -1,0 +1,99 @@
+---
+layout: page.html
+title: My Work
+description: A showcase of Dann Galon's best work, ranging from articles, essays, marketing campaigns, and special projects.
+---
+
+<h1 class="grid__item --start-1">My Work</h1>
+
+<section class="grid__item --span-12">
+  <h2>Articles</h2>
+
+  <ul>
+    {%- for article in articles %}
+      <li class="work-card">
+        <div class="image">
+          {% assign imagePath = article.image | prepend: "articles/" %}
+          {% image imagePath, "" %}
+        </div>
+        <div class="text">
+          <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="title">{{ article.title }}</a>
+          <p class="description">{{ article.publication }}</p>
+        </div>
+      </li>
+    {%- endfor %}
+    </ul>
+</section>
+
+<section class="grid__item --span-12">
+  <h2>Campaigns</h2>
+
+  <ul>
+  {%- for campaign in collections.campaign %}
+    <li class="work-card">
+      <div class="image">
+        {% assign imagePath = campaign.data.image | prepend: "campaigns/" %}
+        {% image imagePath, "" %}
+      </div>
+      <div class="text">
+        <a href="{{ campaign.page.url }}" class="title">{{ campaign.data.title }}</a>
+        <p class="description">Description</p>
+      </div>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>
+
+<section class="grid__item --span-12 space --bottom-3xl">
+  <h2>Special Projects</h2>
+
+  <ul>
+  {%- for specialProject in collections.specialProject %}
+    <li class="work-card">
+      <div class="image">
+        {% assign imagePath = specialProject.data.image | prepend: "special-projects/" %}
+        {% image imagePath, "" %}
+      </div>
+      <div class="text">
+        <a href="{{ specialProject.page.url }}" class="title">{{ specialProject.data.title }}</a>
+        <p class="description">Description</p>
+      </div>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>
+
+{% style %}
+h1 {
+  font-size: var(--step-5);
+  --text-weight: 400;
+  color: hsl(var(--color-primary));
+  position: relative;
+}
+
+h1:after {
+  content: '';
+  position: absolute;
+  background-image: url('/assets/images/sparkles-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 138.08px;
+  height: 67.19px;
+  margin-left: 20px;
+  top: -8px;
+}
+
+h2 {
+  font-size: var(--step-4);
+  --text-weight: 650;
+  color: hsl(var(--color-caution));
+  border: none;
+  margin-bottom: var(--space-2xl);
+}
+
+section ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl) var(--space-s-l);
+}
+{% endstyle %}
