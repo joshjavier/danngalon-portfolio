@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<section class="content grid__item --start-1 --span-4">
+<section class="content grid__item --start-1 --span-4 space --bottom-pad-xl">
   <span class="eyebrow">{{ tags[0] }}</span>
   <h1 class="title">{{ title }}</h1>
   <p class="subtitle">{{ subtitle }}</p>
@@ -33,17 +33,23 @@ layout: page
 </section>
 
 {% style %}
+.header {
+  position: absolute;
+  width: 100%;
+
+  @media (min-width: 80em) {
+    & .nav-links {
+      --color-text: hsl(var(--color-light));
+    }
+  }
+}
+
 main {
   padding: 0;
 }
 
-.content,
-.media {
-  height: 100vh;
-}
-
 .content {
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: none;
 }
 
@@ -53,6 +59,38 @@ main {
   align-items: center;
 }
 
+@media (max-width: 44.999em) {
+  .content {
+    padding-bottom: calc(40vh + var(--space-m));
+  }
+
+  .media {
+    position: fixed;
+    bottom: 0;
+    height: 40vh;
+  }
+}
+
+@media (min-width: 45em) and (max-width: 79.999em) {
+  .content {
+    padding-bottom: calc(40vh + var(--space-l));
+    grid-column: 4 / span 8;
+  }
+
+  .media {
+    position: fixed;
+    bottom: 0;
+    height: 40vh;
+  }
+}
+
+@media (min-width: 80em) {
+  .content,
+  .media {
+    height: 100vh;
+  }
+}
+
 .eyebrow {
   font-size: var(--step--1);
   font-family: var(--text-sans);
@@ -60,6 +98,8 @@ main {
   letter-spacing: var(--space-3xs);
   text-transform: uppercase;
   color: hsl(var(--color-primary));
+  margin-top: var(--space-3xl);
+  display: inline-block;
 }
 
 .title {
