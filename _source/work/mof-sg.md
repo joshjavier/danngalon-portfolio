@@ -1,7 +1,7 @@
 ---
 title: Ministry of Finance (MOF) Singapore
 subtitle: MOF Answer Series (Budget 2024)
-image: MOF_Cover.png
+image: MOF-Cover2.png
 cta:
   text: View Here
   url: https://www.instagram.com/p/C47sQ6ryMb5/?hl=en

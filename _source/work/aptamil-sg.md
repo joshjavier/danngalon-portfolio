@@ -25,7 +25,5 @@ The results from the campaign were repurposed for social posts and ads, as answe
 {% reel %}
   {% video "Aptamil Campaign Video.mp4" %}
   {% video "Aptamil-Social Video.mp4" %}
-  {% image "campaigns/Image 1.png", "" %}
-  {% image "campaigns/Image 2.png", "" %}
   {% image "campaigns/Image 3.png", "" %}
 {% endreel %}
