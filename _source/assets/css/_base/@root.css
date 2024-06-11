@@ -104,6 +104,8 @@
   /* Custom pairs */
   /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.125rem, 0.7457rem + 1.8966vi, 2.5rem);
+  /* Space m-l: 27px → 40px */
+  --space-m-l: clamp(1.6875rem, 1.4634rem + 1.1207vi, 2.5rem);
 
   /* ---------------------------------------------------------------------------
   grid

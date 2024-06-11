@@ -1,3 +1,31 @@
 .header {
-  padding-inline: var(--space-s-l);
+  padding: var(--space-m-l) var(--space-s-l);
+
+  & a {
+    display: block;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity ease 0.2s;
+    }
+  }
+
+  & .logo {
+    width: clamp(3rem, 2.3005rem + 3.3913vi, 5.4375rem); /* 48-87 */
+  }
+
+  & .nav-links {
+    font-style: italic;
+    --text-weight: 350;
+    --color-text: hsl(var(--color-primary));
+
+    & ul {
+      display: flex;
+      gap: var(--space-s-l);
+      list-style-type: none;
+      margin-bottom: var(--space-2xs);
+    }
+  }
 }
