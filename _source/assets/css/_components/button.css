@@ -25,7 +25,6 @@
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s step-start, background-color 0.1s linear;
-  border-radius: var(--border-radius);
   line-height: 1;
 
   &:visited {

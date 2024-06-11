@@ -19,13 +19,16 @@ featuredWorks:
       url: /work/national-heroes-covid/
 ---
 
-<article class="hero grid">
-  <h1 class="display --sr-only">Dann Galon</h1>
-  <p class="text --weight-200 --step-5 --leading-default grid__item --span-7">
-    Dann Galon is a <span class="text --weight-400">writer</span> and <span class="text --weight-400">creative media professional</span> from Manila, Philippines.
-  </p>
-  <button class="button grid__item --start-2 text --sans --uppercase --step-3">Let’s Chat 👋</button>
-  <span class="grid__item --span-12 text --sans --uppercase --align-right">Scroll down to see my featured works</span>
+<article class="hero grid__item --span-12">
+  <div class="head">
+    <h1>
+      <span class="eyebrow">Hi! I'm</span>
+      <span class="headline">Dann Galon</span>
+    </h1>
+    <p class="subhead">a writer and content&nbsp;strategist.</p>
+  </div>
+  <p>I’m a wordsmith who’s at home in all sorts of media, whether it’s the classic ink-and-paper or the digital playground.</p>
+  <a href="#work" class="button --primary">Check out my work</a>
 </article>
 
 <section class="featured-works grid">
@@ -84,29 +87,60 @@ featuredWorks:
 
 {% style %}
 .hero {
-  min-height: calc(100vh - 124px);
-  grid-template-rows: max-content;
+  min-height: 78vh;
+  width: min(680px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
 
-  & p {
-    margin-top: 10vmin;
-    margin-bottom: var(--space-xl-2xl);
+  & .head {
+    width: clamp(min(18.375rem, 100%), 13.9451rem + 21.4783vi, 33.8125rem); /* 294-541 */
+    max-width: 100%;
+    margin-inline: auto;
+    margin-top: 8vh;
 
-    > span { --color-text: hsl(var(--color-primary)); }
-    @media (min-width: 45em) { grid-column-end: span 9; }
-    @media (min-width: 90em) { grid-column-end: span 7; }
+    * { margin-block: 0; }
+
+    .eyebrow, .subhead {
+      font-style: italic;
+      --text-weight: 250;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .headline {
+      font-variation-settings: "wght" 450, "SOFT" 100, "WONK" 1;
+      letter-spacing: -0.03em;
+      display: block;
+      text-align: center;
+      font-size: clamp(2.875rem, 2.3318rem + 2.6339vi, 4.7681rem); /* 46-76.29 */
+    }
+
+    .eyebrow {
+      font-size: clamp(2.3325rem, 1.9071rem + 2.0626vi, 3.815rem); /* 37.32-61.04 */
+    }
+
+    .subhead {
+      font-size: clamp(1.9438rem, 1.6258rem + 1.5417vi, 3.0519rem); /* 31.1-48.83 */
+      max-width: 320px;
+      text-align: right;
+      margin-left: auto;
+    }
   }
 
-  & button {
-    padding: var(--space-l);
-    height: var(--space-2xl);
-    width: max-content;
-    --color-text: hsl(var(--color-primary));
-  }
-
-  & span {
+  > p {
+    max-width: 470px;
     margin-left: auto;
+    margin-top: var(--space-2xl);
+    padding-inline: var(--space-s);
+  }
+
+  > .button {
+    margin-inline: auto;
     margin-top: auto;
-    margin-bottom: 5vh;
+    font-style: italic;
+    --text-weight: 400;
   }
 }
 
