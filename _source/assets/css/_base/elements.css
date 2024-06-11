@@ -166,5 +166,5 @@ hr {
   width: 100%;
   margin: var(--space-xl) 0;
   border: 0;
-  border-top: var(--border-weight-s) solid var(--color-text);
+  border-top: var(--border-weight-s) solid hsl(var(--color-light-mod-2));
 }

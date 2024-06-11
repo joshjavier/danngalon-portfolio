@@ -31,6 +31,18 @@ featuredWorks:
   <a href="#work" class="button --primary">Check out my work</a>
 </article>
 
+<hr class="grid__item --span-12">
+
+<article class="about grid__item --span-12">
+  <h2>About me</h2>
+  <div class="content">
+    <p><strong>Lucky enough to have always enjoyed wielding words, I built a career around them.</strong></p>
+    <p>My journey started with a fascination for storytelling, and it’s led me to explore different avenues:  journalism, PR, events, and both traditional and online media. My extensive experience has helped me understand how to tailor writing for different platforms and audiences.</p>
+    <p>But at the core, it’s the love for crafting compelling narratives that keeps me going. There’s always something new to discover in content strategy, research, and of course, sharpening my writing skills—the heart of everything I do.</p>
+    {% image "lines-14.png", "" %}
+  </div>
+</article>
+
 <section class="featured-works grid">
   <h2 class="display --sr-only">Featured Works</h2>
   <article class="aptamil grid">
@@ -86,6 +98,12 @@ featuredWorks:
 </section>
 
 {% style %}
+hr {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  margin-block: var(--space-xl-3xl) var(--space-4xl);
+}
+
 .hero {
   min-height: 78vh;
   width: min(680px, 100%);
@@ -141,6 +159,52 @@ featuredWorks:
     margin-top: auto;
     font-style: italic;
     --text-weight: 400;
+  }
+}
+
+.about {
+  width: min(680px, 100%);
+  margin-inline: auto;
+
+  & h2 {
+    border: none;
+    font-style: italic;
+    --text-weight: 350;
+    letter-spacing: -0.02em;
+    margin-block: 0 var(--space-xl);
+    position: relative;
+    width: max-content;
+
+    &::after {
+      content: '';
+      background-image: url('/assets/images/sparkles.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 60px;
+      height: 92.63px;
+      position: absolute;
+      top: -70px;
+      right: -38px;
+    }
+  }
+
+  & strong {
+    --text-weight: 650;
+  }
+
+  & .content {
+    max-width: 560px;
+    margin-left: auto;
+
+    & p {
+      margin-bottom: var(--space-l);
+    }
+
+    & img {
+      margin-inline: auto;
+      display: block;
+      margin-top: var(--space-2xl);
+    }
   }
 }
 
