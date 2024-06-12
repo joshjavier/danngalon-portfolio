@@ -28,9 +28,11 @@ font: transform text display properties
   &.--weight-100 { --text-weight: 100; }
   &.--weight-200 { --text-weight: 200; }
   &.--weight-300 { --text-weight: 300; }
+  &.--weight-350 { --text-weight: 350; }
   &.--weight-400 { --text-weight: 400; }
   &.--weight-500 { --text-weight: 500; }
   &.--weight-600 { --text-weight: 600; }
+  &.--weight-650 { --text-weight: 650; }
   &.--weight-700 { --text-weight: 700; }
   &.--weight-800 { --text-weight: 800; }
 

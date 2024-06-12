@@ -1,0 +1,30 @@
+.cta {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  margin-bottom: clamp(6.75rem, 4.3826rem + 11.4783vi, 15rem); /* 108-240 */
+
+  > * { margin: 0; }
+
+  > * + * {
+    margin-top: var(--space-l);
+  }
+
+  & .title {
+    border: none;
+    font-style: italic;
+    --text-weight: 350;
+    letter-spacing: -0.02em;
+  }
+
+  & .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+
+    > * {
+      max-height: unset;
+      > span { text-align: center; }
+      > svg { flex-shrink: 0; }
+    }
+  }
+}

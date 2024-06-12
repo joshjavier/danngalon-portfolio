@@ -81,6 +81,10 @@ featuredWorks:
   </p>
 </article>
 
+<hr class="grid__item --span-12">
+
+{% render "cta.html" %}
+
 {% style %}
 hr {
   width: min(920px, 100%);
@@ -88,7 +92,7 @@ hr {
   margin-block: var(--space-xl-3xl) var(--space-4xl);
 }
 
-h2 {
+h2:not([class]) {
   border: none;
   font-style: italic;
   --text-weight: 350;
