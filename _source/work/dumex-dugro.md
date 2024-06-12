@@ -1,5 +1,5 @@
 ---
-title: Dumex
+title: Dumex Singapore
 subtitle: Spread Your Love for Dugro
 image: Dumex_Cover.png
 cta:
