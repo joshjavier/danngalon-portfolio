@@ -1,16 +1,38 @@
 ---
 layout: page
+stylesheet: vendor/swiper-bundle.min.css
 ---
 
-<article class="case-study">
+<article class="case-study grid">
   <div class="headline">
     <span class="eyebrow">{{ tags[0] }}</span>
     <h1 class="title">{{ title }}</h1>
     <p class="subtitle">{{ subtitle }}</p>
   </div>
 
-  <section class="carousel">
-    CAROUSEL
+  <section class="carousel grid__item --bleed-full">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for slide in reel %}
+        <div class="swiper-slide">
+          {% if slide.type == "video" %}
+          {% video slide.path %}
+          {% else %}
+          {% image slide.path, "" %}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <!-- <div class="swiper-button-prev"></div> -->
+      <!-- <div class="swiper-button-next"></div> -->
+    </div>
   </section>
 
   <section class="content grid__item --span-12">
@@ -63,14 +85,6 @@ layout: page
 
 {% render "cta.html" %}
 
-<!-- <section class="media grid__item --start-5 --bleed-full">
-  {% if page.reel %}
-  <media-reel>
-    {{ page.reel }}
-  </media-reel>
-  {% endif %}
-</section> -->
-
 {% style %}
 /* .header {
   position: absolute;
@@ -117,9 +131,23 @@ layout: page
 }
 
 .carousel {
-  border: 1px solid red;
   height: clamp(11.625rem, 6.3522rem + 25.5652vi, 30rem); /* 186-480 */
   margin-block: var(--space-l-2xl);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  & .swiper-slide {
+    width: max-content;
+    max-width: 60%;
+
+    > * {
+      height: 100%;
+      width: auto;
+    }
+  }
 }
 
 .content {
@@ -172,9 +200,5 @@ layout: page
 
 main > hr {
   margin-block: var(--space-3xl) var(--space-2xl-3xl);
-}
-
-media-reel {
-  --reel-height: min(50vh, 100%);
 }
 {% endstyle %}
