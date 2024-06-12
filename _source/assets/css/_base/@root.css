@@ -108,6 +108,8 @@
   --space-m-l: clamp(1.6875rem, 1.4634rem + 1.1207vi, 2.5rem);
   /* Space xl-3xl: 54px → 120px */
   --space-xl-3xl: clamp(3.375rem, 2.2371rem + 5.6897vi, 7.5rem);
+  /* Space 2xl-3xl: 72px → 120px */
+  --space-2xl-3xl: clamp(4.5rem, 3.6391rem + 4.1739vi, 7.5rem);
 
   /* ---------------------------------------------------------------------------
   grid

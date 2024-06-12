@@ -1,13 +1,18 @@
 ---
 layout: page.html
 title: My Work
-description: A showcase of Dann Galon's best work, ranging from articles, essays, marketing campaigns, and special projects.
+description: A showcase of my best work, ranging from articles, essays, marketing campaigns, and special projects.
 ---
 
-<h1 class="grid__item --start-1">My Work</h1>
+<h1>
+  <span>Work</span>
+</h1>
 
 <section class="grid__item --span-12">
-  <h2>Articles</h2>
+  <div class="section-header">
+    <h2>Articles</h2>
+    <hr>
+  </div>
 
   <ul>
     {%- for article in articles %}
@@ -26,7 +31,10 @@ description: A showcase of Dann Galon's best work, ranging from articles, essays
 </section>
 
 <section class="grid__item --span-12">
-  <h2>Campaigns</h2>
+  <div class="section-header">
+    <h2>Campaigns</h2>
+    <hr>
+  </div>
 
   <ul>
   {%- for campaign in collections.campaign %}
@@ -43,8 +51,11 @@ description: A showcase of Dann Galon's best work, ranging from articles, essays
   </ul>
 </section>
 
-<section class="grid__item --span-12 space --bottom-3xl">
-  <h2>Special Projects</h2>
+<section class="grid__item --span-12">
+  <div class="section-header">
+    <h2>Special Projects</h2>
+    <hr>
+  </div>
 
   <ul>
   {%- for specialProject in collections.specialProject %}
@@ -61,37 +72,81 @@ description: A showcase of Dann Galon's best work, ranging from articles, essays
   </ul>
 </section>
 
+<hr class="grid__item --span-12">
+
+{% render "cta.html" %}
+
 {% style %}
 h1 {
-  font-size: var(--step-5);
-  --text-weight: 400;
-  color: hsl(var(--color-primary));
-  position: relative;
-}
+  text-align: center;
 
-h1:after {
-  content: '';
-  position: absolute;
-  background-image: url('/assets/images/sparkles-1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 138.08px;
-  height: 67.19px;
-  margin-left: 20px;
-  top: -8px;
+  > span {
+    font-style: italic;
+    --text-weight: 350;
+    letter-spacing: -0.02em;
+    width: max-content;
+    font-size: var(--step-3);
+    position: relative;
+
+    &::after {
+      content: '';
+      background-image: url('/assets/images/sparkles-1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 80px;
+      height: 38.93px;
+      position: absolute;
+      top: -18px;
+      right: -78px;
+    }
+  }
 }
 
 h2 {
-  font-size: var(--step-4);
-  --text-weight: 650;
-  color: hsl(var(--color-caution));
+  font-size: var(--step-5);
+  letter-spacing: -0.04em;
+  --text-weight: 250;
   border: none;
-  margin-bottom: var(--space-2xl);
+  position: relative;
+
+  /* &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 920px;
+    background-color: hsl(var(--color-light-mod-2));
+    bottom: 18%;
+    right: 0;
+  } */
 }
 
 section ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-xl) var(--space-s-l);
+  max-width: 920px;
+  margin-left: auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl) var(--space-l);
+  justify-items: center;
+}
+
+main > hr {
+  margin-block: var(--space-3xl) var(--space-2xl-3xl);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-block: var(--space-3xl) var(--space-2xl);
+  gap: var(--space-xl);
+
+  > * { margin: 0; }
+
+  > :first-child { flex-shrink: 0; }
+
+  > :last-child {
+    transform: translateY(-0.7em);
+    max-width: 920px;
+  }
 }
 {% endstyle %}
