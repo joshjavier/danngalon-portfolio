@@ -94,5 +94,19 @@
         --button-border: var(--button-text);
       }
     }
+
+    &.--outlined {
+      --button-text: hsl(var(--color-primary));
+      --button-bg: hsl(var(--color-light));
+      --button-border: var(--button-text);
+
+      @media (hover: hover) {
+        &:hover {
+          --button-text: hsl(var(--color-light));
+          --button-bg: hsl(var(--color-primary));
+          --button-border: transparent;
+        }
+      }
+    }
   }
 }
