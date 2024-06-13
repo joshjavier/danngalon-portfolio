@@ -19,21 +19,3 @@ custom fonts
   font-weight: 100 900;
   src: url('/assets/fonts/Fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2') format('woff2');
 }
-
-/* urbanist-regular */
-@font-face {
-  font-display: swap;
-  font-family: 'Urbanist';
-  font-style: normal;
-  font-weight: 100 900;
-  src: url('/assets/fonts/Urbanist/Urbanist[ital,wght].woff2') format('woff2');
-}
-
-/* urbanist-italic */
-@font-face {
-  font-display: swap;
-  font-family: 'Urbanist';
-  font-style: italic;
-  font-weight: 100 900;
-  src: url('/assets/fonts/Urbanist/Urbanist[ital,wght].woff2') format('woff2');
-}
