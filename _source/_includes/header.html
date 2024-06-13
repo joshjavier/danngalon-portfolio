@@ -1,7 +1,10 @@
 <header class="header grid__item --span-12">
   <div class="flex --justify-between --align-items-center">
     <div class="logo">
-      <a href="/">{% image "logo.webp", "" %}</a>
+      <a href="/">
+        {% image "logo.webp", "" %}
+        <span class="display --sr-only">Home</span>
+      </a>
     </div>
     <div class="nav-links">
       <ul role="list">
