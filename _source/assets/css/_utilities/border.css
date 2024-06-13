@@ -7,6 +7,7 @@
   &.--radius-m { border-radius: var(--border-radius-m); }
   &.--radius-l { border-radius: var(--border-radius-l); }
   &.--radius-round { border-radius: 100%; }
+  &.--radius-pill { border-radius: 9999em; }
 
   &.--thin { border-width: var(--border-weight-s); }
   &.--top-thin { border-top-width: var(--border-weight-s); }

@@ -1,0 +1,40 @@
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  --color-text: hsl(var(--color-primary));
+  text-decoration: none;
+  opacity: 0.5;
+  max-width: 35ch;
+  text-wrap: balance;
+
+  > :first-child {
+    display: flex;
+    gap: var(--space-2xs);
+    font-style: italic;
+    --text-weight: 700;
+    letter-spacing: -0.01em;
+
+    .next & {
+      justify-content: end;
+    }
+  }
+
+  > :last-child {
+    font-size: var(--step-2);
+    letter-spacing: -0.02em;
+    --text-weight: 250;
+
+    .next & {
+      text-align: right;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.1s ease;
+
+    > :last-child {
+      text-decoration: underline;
+    }
+  }
+}

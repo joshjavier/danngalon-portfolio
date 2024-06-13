@@ -16,12 +16,23 @@ font: transform text display properties
   &.--size-poster { font-size: var(--text-poster); }
   &.--size-poster-l { font-size: var(--text-poster-l); }
 
+  &.--step--1 { font-size: var(--step--1); }
+  &.--step-0 { font-size: var(--step-0); }
+  &.--step-1 { font-size: var(--step-1); }
+  &.--step-2 { font-size: var(--step-2); }
+  &.--step-3 { font-size: var(--step-3); }
+  &.--step-4 { font-size: var(--step-4); }
+  &.--step-5 { font-size: var(--step-5); }
+  &.--step-6 { font-size: var(--step-6); }
+
   &.--weight-100 { --text-weight: 100; }
   &.--weight-200 { --text-weight: 200; }
   &.--weight-300 { --text-weight: 300; }
+  &.--weight-350 { --text-weight: 350; }
   &.--weight-400 { --text-weight: 400; }
   &.--weight-500 { --text-weight: 500; }
   &.--weight-600 { --text-weight: 600; }
+  &.--weight-650 { --text-weight: 650; }
   &.--weight-700 { --text-weight: 700; }
   &.--weight-800 { --text-weight: 800; }
 
@@ -44,6 +55,8 @@ font: transform text display properties
   &.--leading-m { line-height: var(--text-leading-m); }
   &.--leading-l { line-height: var(--text-leading-l); }
   &.--leading-fluid { line-height: var(--text-leading-fluid); }
+  &.--leading-default { line-height: var(--text-leading-default); }
+  &.--leading-display { line-height: var(--text-leading-display); }
 
   &.--spacing-s { letter-spacing: var(--text-spacing-s); }
   &.--spacing-m { letter-spacing: var(--text-spacing-m); }
@@ -54,4 +67,8 @@ font: transform text display properties
   &.--uppercase { text-transform: uppercase; }
   &.--unlisted { list-style-type: none; }
   &.--undecorated { text-decoration: none; }
+
+  &.--serif { font-family: var(--text-serif); }
+  &.--sans { font-family: var(--text-sans); }
+  &.--mono { font-family: var(--text-mono); }
 }

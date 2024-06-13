@@ -6,51 +6,135 @@
   --color-peach: 10deg 100% 85%;
   --color-charcoal: 40deg 2% 15%;
 
-  /* semantic color themes */
-  --color-text-hsl: var(--color-charcoal);
-  --color-text: hsl(var(--color-charcoal) / var(--color-alpha));
-  --color-sheet-hsl: var(--color-peach);
-  --color-sheet: hsl(var(--color-peach) / var(--color-alpha));
+  /* neutral colors */
+  --color-light:         52deg  94%  94%;
+  --color-light-mod-1:   53deg  43%  88%;
+  --color-light-mod-2:   60deg  15%  77%;
+  --color-dark:         200deg   6%  38%;
+  --color-dark-mod-1:   188deg   4%  44%;
+  --color-dark-mod-2:   108deg   2%  55%;
+  --color-dark-tint-10: 202deg   6%  34%;
+  --color-dark-tint-30: 203deg   6%  27%;
+  --color-dark-tint-60: 192deg   6%  15%;
 
-  @media (prefers-color-scheme: dark) {
-    --color-text-hsl: var(--color-peach);
-    --color-text: hsl(var(--color-peach) / var(--color-alpha));
-    --color-sheet-hsl: var(--color-charcoal);
-    --color-sheet: hsl(var(--color-charcoal) / var(--color-alpha));
-  }
+  /* brand colors */
+  --color-primary:             97deg  29%  43%;
+  --color-primary-tint:        66deg  43%  85%;
+  --color-primary-tint-30:     90deg  24%  58%;
+  --color-primary-tint-10:     96deg  24%  48%;
+  --color-primary-shade:      115deg  11%  41%;
+  --color-primary-shade-10:    98deg  26%  43%;
+  --color-primary-shade-30:   100deg  20%  42%;
+  --color-secondary:           45deg 100%  70%;
+  --color-secondary-shade-10:  46deg  81%  67%;
+  --color-secondary-shade-30:  46deg  51%  61%;
+  --color-secondary-shade:     48deg  22%  51%;
+  --color-secondary-tint-10:   46deg 100%  72%;
+  --color-secondary-tint-30:   46deg 100%  77%;
+  --color-secondary-tint:      48deg  96%  90%;
+
+  /* semantic color themes */
+  --color-info:          205deg  95%  44%;
+  --color-info-tint:     206deg  76%  92%;
+  --color-positive:      130deg  87%  35%;
+  --color-positive-tint: 130deg  47%  90%;
+  --color-caution:        25deg  87%  51%;
+  --color-caution-tint:   25deg  89%  93%;
+  --color-negative:        4deg  58%  49%;
+  --color-negative-tint:  30deg  73%  87%;
+
+  --color-text-hsl: var(--color-dark);
+  --color-text: hsl(var(--color-dark) / var(--color-alpha));
+  --color-sheet-hsl: var(--color-light);
+  --color-sheet: hsl(var(--color-light) / var(--color-alpha));
+
+  /* @media (prefers-color-scheme: dark) {
+    --color-text-hsl: var(--color-light);
+    --color-text: hsl(var(--color-light) / var(--color-alpha));
+    --color-sheet-hsl: var(--color-dark);
+    --color-sheet: hsl(var(--color-dark) / var(--color-alpha));
+  } */
 
   /* ---------------------------------------------------------------------------
   spacing
+  @link https://utopia.fyi/space/calculator?c=320,18,1.2,1480,20,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l&g=s,l,2xl,12
   --------------------------------------------------------------------------- */
 
-  --space-scale: 2;
-  --space-base-s: 2rem;
-  --space-base: max(1.5rem, min(calc(0.5rem + 1.5vw), 3rem));
-  --space-xxs: calc(var(--space-xs) / var(--space-scale));
-  --space-xs: calc(var(--space-s) / var(--space-scale));
-  --space-s: calc(var(--space-base-s) / var(--space-scale));
-  --space-m: var(--space-base);
-  --space-l: calc(var(--space-m) * var(--space-scale));
-  --space-xl: calc(var(--space-l) * var(--space-scale));
-  --space-xxl: calc(var(--space-xl) * var(--space-scale));
+  /* Space 3xs: 5px → 5px */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+  /* Space 2xs: 9px → 10px */
+  --space-2xs: clamp(0.5625rem, 0.5453rem + 0.0862vi, 0.625rem);
+  /* Space xs: 14px → 15px */
+  --space-xs: clamp(0.875rem, 0.8578rem + 0.0862vi, 0.9375rem);
+  /* Space s: 18px → 20px */
+  --space-s: clamp(1.125rem, 1.0905rem + 0.1724vi, 1.25rem);
+  /* Space m: 27px → 30px */
+  --space-m: clamp(1.6875rem, 1.6358rem + 0.2586vi, 1.875rem);
+  /* Space l: 36px → 40px */
+  --space-l: clamp(2.25rem, 2.181rem + 0.3448vi, 2.5rem);
+  /* Space xl: 54px → 60px */
+  --space-xl: clamp(3.375rem, 3.2716rem + 0.5172vi, 3.75rem);
+  /* Space 2xl: 72px → 80px */
+  --space-2xl: clamp(4.5rem, 4.3621rem + 0.6897vi, 5rem);
+  /* Space 3xl: 108px → 120px */
+  --space-3xl: clamp(6.75rem, 6.5431rem + 1.0345vi, 7.5rem);
+  /* Space 4xl: 144px → 160px */
+  --space-4xl: clamp(9rem, 8.7241rem + 1.3793vi, 10rem);
+
+  /* One-up pairs */
+  /* Space 3xs-2xs: 5px → 10px */
+  --space-3xs-2xs: clamp(0.3125rem, 0.2263rem + 0.431vi, 0.625rem);
+  /* Space 2xs-xs: 9px → 15px */
+  --space-2xs-xs: clamp(0.5625rem, 0.4591rem + 0.5172vi, 0.9375rem);
+  /* Space xs-s: 14px → 20px */
+  --space-xs-s: clamp(0.875rem, 0.7716rem + 0.5172vi, 1.25rem);
+  /* Space s-m: 18px → 30px */
+  --space-s-m: clamp(1.125rem, 0.9181rem + 1.0345vi, 1.875rem);
+  /* Space m-l: 27px → 40px */
+  --space-m-l: clamp(1.6875rem, 1.4634rem + 1.1207vi, 2.5rem);
+  /* Space l-xl: 36px → 60px */
+  --space-l-xl: clamp(2.25rem, 1.8362rem + 2.069vi, 3.75rem);
+  /* Space xl-2xl: 54px → 80px */
+  --space-xl-2xl: clamp(3.375rem, 2.9267rem + 2.2414vi, 5rem);
+  /* Space 2xl-3xl: 72px → 120px */
+  --space-2xl-3xl: clamp(4.5rem, 3.6724rem + 4.1379vi, 7.5rem);
+  /* Space 3xl-4xl: 108px → 160px */
+  --space-3xl-4xl: clamp(6.75rem, 5.8534rem + 4.4828vi, 10rem);
+
+  /* Custom pairs */
+  /* Space s-l: 18px → 40px */
+  --space-s-l: clamp(1.125rem, 0.7457rem + 1.8966vi, 2.5rem);
+  /* Space l-2xl: 36px → 80px */
+  --space-l-2xl: clamp(2.25rem, 1.4609rem + 3.8261vi, 5rem);
+  /* Space xl-3xl: 54px → 120px */
+  --space-xl-3xl: clamp(3.375rem, 2.2371rem + 5.6897vi, 7.5rem);
+
+  /* ---------------------------------------------------------------------------
+  grid
+  @link https://utopia.fyi/grid/calculator?c=320,18,1.2,1480,20,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l&g=s,l,2xl,12
+  --------------------------------------------------------------------------- */
+
+  --grid-max-width: 92.50rem;
+  --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.7457rem + 1.8966vw, 2.5rem));
+  --grid-columns: 12;
+
+  /* ---------------------------------------------------------------------------
+  custom fluid tokens
+  @link https://utopia.fyi/clamp/calculator?a=320,1480,8—80
+  --------------------------------------------------------------------------- */
+
+  --fluid-8-80: clamp(0.5rem, -0.7414rem + 6.2069vi, 5rem);
 
   /* ---------------------------------------------------------------------------
   text properties
   --------------------------------------------------------------------------- */
 
-  /* font stacks */
-  --text-main:
-    "Trispace",
-    -apple-system,
-    blinkmacsystemfont,
-    "Segoe UI",
-    roboto,
-    helvetica,
-    arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  /* font stacks via https://modernfontstacks.com */
+  --text-serif: Fraunces, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --text-sans: Urbanist, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --text-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  --text-main: var(--text-serif);
 
   /* size */
   --text-base: max(1.6em, min(calc(0.5em + 1vw), 2.4em));
@@ -69,8 +153,27 @@
   --text-poster: clamp(4.5rem, 8vw, 10rem);
   --text-poster-l: clamp(5.5rem, 9vw, 12rem);
 
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1480,20,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l&g=s,l,2xl,12 */
+
+  /* Step -1: 15px → 16px */
+  --step--1: clamp(0.9375rem, 0.9203rem + 0.0862vi, 1rem);
+  /* Step 0: 18px → 20px */
+  --step-0: clamp(1.125rem, 1.0905rem + 0.1724vi, 1.25rem);
+  /* Step 1: 21.6px → 25px */
+  --step-1: clamp(1.35rem, 1.2914rem + 0.2931vi, 1.5625rem);
+  /* Step 2: 25.92px → 31.25px */
+  --step-2: clamp(1.62rem, 1.5281rem + 0.4595vi, 1.9531rem);
+  /* Step 3: 31.104px → 39.0625px */
+  --step-3: clamp(1.944rem, 1.8068rem + 0.6861vi, 2.4414rem);
+  /* Step 4: 37.3248px → 48.8281px */
+  --step-4: clamp(2.3328rem, 2.1345rem + 0.9917vi, 3.0518rem);
+  /* Step 5: 44.7898px → 61.0352px */
+  --step-5: clamp(2.7994rem, 2.5193rem + 1.4005vi, 3.8147rem);
+  /* Step 6: 53.7477px → 76.2939px */
+  --step-6: clamp(3.3592rem, 2.9705rem + 1.9436vi, 4.7684rem);
+
   /* weight */
-  --text-weight: 250;
+  --text-weight: 350;
   --text-width-s: 75;
   --text-width-m: 100;
   --text-width-l: 125;
@@ -92,6 +195,11 @@
   --text-leading-l: calc(var(--text-leading-m) * var(--text-leading-scale));
   --text-leading-fluid: calc(0.75rem + 1.25em);
 
+  --text-leading-normal: 1;
+  --text-leading-display: 1.1;
+  --text-leading-default: 1.2;
+  --text-leading-prose: 1.5;
+
   /* letter spacing */
   --text-spacing-s: -0.025em;
   --text-spacing-m: 0;
@@ -103,7 +211,7 @@
   --------------------------------------------------------------------------- */
 
   /* border radius */
-  --border-radius-s: 0.3rem;
+  --border-radius-s: var(--space-s);
   --border-radius-m: 0.6rem;
   --border-radius-l: 0.9rem;
 

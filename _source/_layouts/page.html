@@ -2,7 +2,9 @@
 layout: base
 ---
 
-<main class="grid {% if page.grid %}{{ page.grid }}{% endif %} space --bottom-pad-l">
+{% render "header.html" %}
+
+<main class="grid {% if page.grid %}{{ page.grid }}{% endif %}">
 
   {% comment %}
   <a href="/" class="grid__item --span-3 space --top-xl" aria-label="Grease">
@@ -13,3 +15,5 @@ layout: base
   {{ content }}
 
 </main>
+
+{% render "footer.html" %}

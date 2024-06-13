@@ -2,10 +2,38 @@
 custom fonts
 ---------------------------------------------------------------------------- */
 
+/* fraunces-regular */
 @font-face {
-  font-family: Trispace;
-  src: url("/assets/fonts/Trispace.woff2") format("woff2");
-  font-weight: 100 800;
-  font-stretch: normal;
   font-display: swap;
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Fraunces/Fraunces[SOFT,WONK,opsz,wght].woff2') format('woff2');
+}
+
+/* fraunces-italic */
+@font-face {
+  font-display: swap;
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2') format('woff2');
+}
+
+/* urbanist-regular */
+@font-face {
+  font-display: swap;
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Urbanist/Urbanist[ital,wght].woff2') format('woff2');
+}
+
+/* urbanist-italic */
+@font-face {
+  font-display: swap;
+  font-family: 'Urbanist';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Urbanist/Urbanist[ital,wght].woff2') format('woff2');
 }

@@ -1,0 +1,45 @@
+.work-card {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  max-width: 35ch;
+
+  > .image {
+    aspect-ratio: 1.6;
+    overflow: hidden;
+    border: 1px solid hsl(var(--color-primary-shade));
+
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+    }
+  }
+
+  & .title {
+    text-decoration: none;
+    font-size: var(--step-1);
+    letter-spacing: -0.02em;
+    --text-weight: 650;
+    line-height: var(--text-leading-default);
+
+    &:hover {
+      color: hsl(var(--color-primary));
+      text-decoration: underline;
+    }
+  }
+
+  & .description {
+    margin-block: var(--space-3xs) 0;
+    font-size: var(--step-0);
+    letter-spacing: -0.01em;
+    color: hsl(var(--color-dark-mod-2));
+
+    :hover + & {
+      color: hsl(var(--color-dark));
+    }
+  }
+}
