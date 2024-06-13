@@ -13,15 +13,13 @@ category: Special Projects
 tags:
   - Editorial
 order: 2
+reel:
+  - special-projects/cny-1.png
+  - special-projects/cny-2.png
+  - special-projects/cny-3.png
+  - special-projects/cny-4.png
+  - special-projects/cny-5.png
+  - special-projects/cny-6.png
 ---
 
 CNY 2020 was celebrated with an interactive microsite that matches one’s 2020 blessings (we were optimistic, okay 😩)  with movie recommendations.
-
-{% reel %}
-  {% image "special-projects/cny-1.png", "" %}
-  {% image "special-projects/cny-2.png", "" %}
-  {% image "special-projects/cny-3.png", "" %}
-  {% image "special-projects/cny-4.png", "" %}
-  {% image "special-projects/cny-5.png", "" %}
-  {% image "special-projects/cny-6.png", "" %}
-{% endreel %}

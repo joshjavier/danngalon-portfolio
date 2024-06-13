@@ -48,12 +48,12 @@
   --color-sheet-hsl: var(--color-light);
   --color-sheet: hsl(var(--color-light) / var(--color-alpha));
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     --color-text-hsl: var(--color-light);
     --color-text: hsl(var(--color-light) / var(--color-alpha));
     --color-sheet-hsl: var(--color-dark);
     --color-sheet: hsl(var(--color-dark) / var(--color-alpha));
-  }
+  } */
 
   /* ---------------------------------------------------------------------------
   spacing
@@ -104,6 +104,10 @@
   /* Custom pairs */
   /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.125rem, 0.7457rem + 1.8966vi, 2.5rem);
+  /* Space l-2xl: 36px → 80px */
+  --space-l-2xl: clamp(2.25rem, 1.4609rem + 3.8261vi, 5rem);
+  /* Space xl-3xl: 54px → 120px */
+  --space-xl-3xl: clamp(3.375rem, 2.2371rem + 5.6897vi, 7.5rem);
 
   /* ---------------------------------------------------------------------------
   grid
@@ -169,7 +173,7 @@
   --step-6: clamp(3.3592rem, 2.9705rem + 1.9436vi, 4.7684rem);
 
   /* weight */
-  --text-weight: 250;
+  --text-weight: 350;
   --text-width-s: 75;
   --text-width-m: 100;
   --text-width-l: 125;

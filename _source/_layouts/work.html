@@ -1,39 +1,93 @@
 ---
 layout: page
+stylesheet: vendor/swiper-bundle.min.css
 ---
 
-<section class="content grid__item --start-1 --span-4 space --bottom-pad-xl">
-  <span class="eyebrow">{{ tags[0] }}</span>
-  <h1 class="title">{{ title }}</h1>
-  <p class="subtitle">{{ subtitle }}</p>
+<article class="case-study grid">
+  <div class="headline">
+    <span class="eyebrow">{{ tags[0] }}</span>
+    <h1 class="title">{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+  </div>
 
-  {{ content }}
+  <section class="carousel grid__item --bleed-full">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {%- for slide in reel %}
+        <div class="swiper-slide">
+          {%- assign type = slide | split: "." | last %}
+          {%- if type == "mp4" %}
+          {%- video slide %}
+          {%- else %}
+          {%- image slide, "" %}
+          {%- endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
-  <a href="{{ cta.url }}" class="cta button --primary">
-    <span>{{ cta.text }}</span>
-    {% render "svg/link.svg" %}
-  </a>
-
-  <section class="whatidid">
-    <h2>What I Did:</h2>
-    <ul>
-    {% for skill in skills %}
-      <li>{{ skill }}</li>
-    {% endfor %}
-    </ul>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </section>
-</section>
 
-<section class="media grid__item --start-5 --bleed-full">
-  {% if page.reel %}
-  <media-reel>
-    {{ page.reel }}
-  </media-reel>
-  {% endif %}
-</section>
+  <section class="content grid__item --span-12">
+    <div class="description">
+      {{ content }}
+      </div>
+
+    <div class="whatidid">
+      <h2>What I Did</h2>
+      <ul>
+      {% for skill in skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+
+    <a href="{{ cta.url }}" class="button --primary">
+      <span>{{ cta.text }}</span>
+      {% render "svg/link.svg" %}
+    </a>
+  </section>
+</article>
+
+{%- assign works = collections.campaign | concat: collections.specialProject %}
+{%- assign previousWork = works | getPreviousCollectionItem %}
+{%- assign nextWork = works | getNextCollectionItem %}
+
+<nav class="navigation grid__item --span-12">
+{%- if previousWork %}
+  <a href="{{ previousWork.url }}" class="nav-link prev">
+    <div>
+      {% render "svg/arrow-left.svg" %}
+      <span>Previous</span>
+    </div>
+    <span>{{ previousWork.data.title }}</span>
+  </a>
+{%- endif %}
+{%- if nextWork %}
+  <a href="{{ nextWork.url }}" class="nav-link next">
+    <div>
+      <span>Next</span>
+      {% render "svg/arrow-right.svg" %}
+    </div>
+    <span>{{ nextWork.data.title }}</span>
+  </a>
+{%- endif %}
+</nav>
+
+<hr id="contact" class="grid__item --span-12">
+
+{% render "cta.html", contact: contact %}
 
 {% style %}
-.header {
+/* .header {
   position: absolute;
   width: 100%;
 
@@ -42,85 +96,131 @@ layout: page
       --color-text: hsl(var(--color-light));
     }
   }
+} */
+
+.headline {
+  margin-top: var(--space-l);
+
+  > .eyebrow {
+    font-size: var(--step--1);
+    --text-weight: 650;
+    letter-spacing: -0.02em;
+    color: hsl(var(--color-primary));
+  }
+
+  > .title {
+    font-size: var(--step-5);
+    --text-weight: 650;
+    letter-spacing: -0.02em;
+    margin-block: var(--space-3xs) var(--space-s);
+    line-height: 0.98;
+    text-wrap: pretty;
+  }
+
+  > .subtitle {
+    font-size: var(--step-1);
+    --text-weight: 350;
+    letter-spacing: -0.01em;
+    font-style: italic;
+    line-height: var(--text-leading-default);
+    margin: 0;
+  }
+
+  @media (min-width: 800px) {
+    text-align: center;
+  }
 }
 
-main {
-  padding: 0;
+.carousel {
+  height: calc(24px + clamp(11.625rem, 6.3522rem + 25.5652vi, 30rem)); /* 186-480 */
+  margin-block: var(--space-l-2xl);
+}
+
+.swiper {
+  --swiper-pagination-color: hsl(var(--color-caution));
+  --swiper-pagination-bullet-size: var(--space-2xs);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: unset;
+
+  & .swiper-slide {
+    width: max-content;
+    max-width: 60%;
+    min-width: 320px;
+
+    > * {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      border: 1px solid hsl(var(--color-primary-shade));
+    }
+  }
+
+  & .swiper-pagination {
+    position: unset;
+  }
+
+  & .swiper-button-next,
+  & .swiper-button-prev {
+    --swiper-navigation-sides-offset: var(--space-s-l);
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
 }
 
 .content {
-  overflow-y: auto;
-  scrollbar-width: none;
+  width: min(920px, 100%);
+  margin-inline: auto;
+  display: grid;
+  row-gap: var(--space-xl);
+
+  & p {
+    letter-spacing: -0.01em;
+  }
+
+  > a {
+    justify-content: center;
+  }
+
+  @media (max-width: 799.999px) {
+    max-width: 45ch;
+  }
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 320px;
+    column-gap: var(--space-l);
+
+    > .whatidid {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      margin-left: auto;
+    }
+
+    > a {
+      width: max-content;
+    }
+  }
 }
 
-.media {
-  background-color: hsl(var(--color-dark-tint-60));
+.navigation {
   display: flex;
-  align-items: center;
-}
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  justify-content: space-between;
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  margin-top: var(--space-3xl-4xl);
 
-@media (max-width: 44.999em) {
-  .content {
-    padding-bottom: calc(40vh + var(--space-m));
-  }
-
-  .media {
-    position: fixed;
-    bottom: 0;
-    height: 40vh;
+  & .nav-link.next {
+    margin-left: auto;
   }
 }
 
-@media (min-width: 45em) and (max-width: 79.999em) {
-  .content {
-    padding-bottom: calc(40vh + var(--space-l));
-    grid-column: 4 / span 8;
-  }
-
-  .media {
-    position: fixed;
-    bottom: 0;
-    height: 40vh;
-  }
-}
-
-@media (min-width: 80em) {
-  .content,
-  .media {
-    height: 100vh;
-  }
-}
-
-.eyebrow {
-  font-size: var(--step--1);
-  font-family: var(--text-sans);
-  --text-weight: 900;
-  letter-spacing: var(--space-3xs);
-  text-transform: uppercase;
-  color: hsl(var(--color-primary));
-  margin-top: var(--space-3xl);
-  display: inline-block;
-}
-
-.title {
-  font-size: var(--step-4);
-  --text-weight: 650;
-  margin-block: var(--space-l) var(--space-s);
-}
-
-.subtitle {
-  font-size: var(--step-1);
-  --text-weight: 350;
-  font-style: italic;
-  margin-bottom: var(--space-l);
-  line-height: var(--text-leading-default);
-}
-
-.cta {
-  margin-block: var(--space-xl);
-}
-
-media-reel {
-  --reel-height: min(50vh, 100%);
+main > hr {
+  margin-block: var(--space-3xl) var(--space-2xl-3xl);
 }
 {% endstyle %}

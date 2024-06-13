@@ -1,25 +1,30 @@
 .whatidid {
-  padding: var(--space-m) var(--space-l);
-  border: 1px dashed hsl(var(--color-primary));
-  border-radius: var(--space-s);
-
   & * { margin: 0; }
 
   & h2 {
-    font-size: var(--step-1);
-    font-family: var(--text-sans);
+    font-size: var(--step--1);
     --text-weight: 700;
     text-transform: uppercase;
-    color: hsl(var(--color-caution));
     border: none;
     margin-bottom: var(--space-s);
+    --color-text: hsl(var(--color-dark-mod-2));
   }
 
-  & li {
-    list-style-image: url('/assets/images/icons/tick.svg');
+  & ul {
+    margin-left: var(--space-2xs);
 
-    & + & {
-      margin-top: var(--space-3xs);
+    > li {
+      display: flex;
+      gap: var(--space-2xs);
+
+      &::before {
+        content: url('/assets/images/icons/tick.svg');
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        transform: translateY(2px);
+      }
     }
   }
+
 }

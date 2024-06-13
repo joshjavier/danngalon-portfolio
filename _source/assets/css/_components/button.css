@@ -25,7 +25,6 @@
   font-family: inherit;
   text-decoration: none;
   transition: color 0.1s step-start, background-color 0.1s linear;
-  border-radius: var(--border-radius);
   line-height: 1;
 
   &:visited {
@@ -93,6 +92,20 @@
         --button-text: hsl(var(--color-primary));
         --button-bg: hsl(var(--color-light));
         --button-border: var(--button-text);
+      }
+    }
+
+    &.--outlined {
+      --button-text: hsl(var(--color-primary));
+      --button-bg: hsl(var(--color-light));
+      --button-border: var(--button-text);
+
+      @media (hover: hover) {
+        &:hover {
+          --button-text: hsl(var(--color-light));
+          --button-bg: hsl(var(--color-primary));
+          --button-border: transparent;
+        }
       }
     }
   }

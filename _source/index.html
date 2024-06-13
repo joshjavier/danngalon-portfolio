@@ -4,178 +4,263 @@ layout: page.html
 featuredWorks:
   - title: Aptamil Singapore
     description: "Tapping on local humour to get parents engaged with our key message: Keeping children safe, healthy, and happy."
+    image: "campaigns/Aptami_Cover.webp"
     cta:
       text: View Case Study
       url: /work/aptamil-sg/
   - title: "Hyped & Hashtagged: 2021"
     description: A deep dive into the marketing trends that shaped the digital landscape of 2021.
+    image: "articles/HypedHastagged-Banner.png"
     cta:
       text: Read Online
       url: https://drive.google.com/file/d/1RP4PsEvXJlSlTF8ZVyBgs7zDfNf24Lic/view?usp=sharing
   - title: Araw ng mga Bayani
     description: A special project that reimagines national heroes as pandemic frontliners to commemmorate National Heroes’ Day.
+    image: "special-projects/ArawngmgaBayani_CampaignCover.png"
     cta:
       text: View Case Study
-      url: /work/araw-ng-mga-bayani/
+      url: /work/national-heroes-covid/
 ---
 
-<article class="hero grid">
-  <h1 class="display --sr-only">Dann Galon</h1>
-  <p class="text --weight-200 --step-5 --leading-default grid__item --span-7">
-    Dann Galon is a <span class="text --weight-400">writer</span> and <span class="text --weight-400">creative media professional</span> from Manila, Philippines.
-  </p>
-  <button class="button grid__item --start-2 text --sans --uppercase --step-3">Let’s Chat 👋</button>
-  <span class="grid__item --span-12 text --sans --uppercase --align-right">Scroll down to see my featured works</span>
+<article class="hero grid__item --span-12">
+  <div class="head">
+    <h1>
+      <span class="eyebrow">Hi! I’m</span>
+      <span class="headline">Dann Galon</span>
+    </h1>
+    <p class="subhead">a writer and content&nbsp;strategist.</p>
+  </div>
+  <p>I’m a wordsmith who’s at home in all sorts of media, whether it’s the classic ink-and-paper or the digital playground.</p>
+  <a href="#work" class="button --primary">Check out my work</a>
 </article>
 
-<section class="featured-works grid">
-  <h2 class="display --sr-only">Featured Works</h2>
-  <article class="aptamil grid">
-    <div class="image grid__item --bleed-left --span-8 --align-center">
-      {% image "campaigns/Aptami_Cover.webp", "" %}
-    </div>
-    <div class="content grid__item --start-8 --span-4 --align-center">
-      <h3>{{ featuredWorks[0].title }}</h3>
-      <p>{{ featuredWorks[0].description }}</p>
-      <a href="{{ featuredWorks[0].cta.url }}" class="button --primary">
-        <span>{{ featuredWorks[0].cta.text }}</span>
-        {% render "svg/chevron-right.svg" %}
-      </a>
-    </div>
-  </article>
-  <article class="hyped grid">
-    <div class="image grid__item --start-2 --align-center">
-      {% image "hyped-and-hashtagged-2021-book-cover.png", "" %}
-    </div>
-    <div class="content grid__item --start-8 --span-4 --align-center">
-      <h3>{{ featuredWorks[1].title }}</h3>
-      <p>{{ featuredWorks[1].description }}</p>
-      <a href="{{ featuredWorks[1].cta.url }}" target="_blank" rel="noopener noreferrer" class="button --primary" >
-        <span>{{ featuredWorks[1].cta.text }}</span>
-        {% render "svg/link.svg" %}
-      </a>
-    </div>
-  </article>
-  <article class="bayani grid color --set-sheet">
-    <div class="image grid__item --start-2 --align-center">
-      <div class="strip">
-        <div class="poster">{% image "special-projects/frame-5.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-4.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-6.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-5.jpg", "" %}</div>
+<hr id="about" class="grid__item --span-12">
+
+<article class="about grid__item --span-12">
+  <h2>About me</h2>
+  <div class="content">
+    <p><strong>Lucky enough to have always enjoyed wielding words, I built a career around them.</strong></p>
+    <p>My journey started with a fascination for storytelling, and it’s led me to explore different avenues:  journalism, PR, events, and both traditional and online media. My extensive experience has helped me understand how to tailor writing for different platforms and audiences.</p>
+    <p>But at the core, it’s the love for crafting compelling narratives that keeps me going. There’s always something new to discover in content strategy, research, and of course, sharpening my writing skills—the heart of everything I do.</p>
+    {% image "lines-14.png", "" %}
+  </div>
+</article>
+
+<hr id="work" class="grid__item --span-12">
+
+<article class="featured-works grid__item --span-12">
+  <h2>Work</h2>
+  <ul role="list">
+  {% for item in featuredWorks %}
+    {%- if item.cta.url contains "http" -%}
+      {%- assign icon = "svg/link.svg" -%}
+    {%- else -%}
+      {%- assign icon = "svg/chevron-right.svg" -%}
+    {%- endif -%}
+
+    <li class="work-item">
+      <div class="image">
+        {% image item.image, "" %}
       </div>
-      <div class="strip">
-        <div class="poster">{% image "special-projects/frame-1.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-2.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-3.jpg", "" %}</div>
-        <div class="poster">{% image "special-projects/frame-1.jpg", "" %}</div>
+      <div class="text">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a href="{{ item.cta.url }}" class="button --primary --outlined">
+          <span>{{ item.cta.text }}</span>
+          {% render icon -%}
+        </a>
       </div>
-    </div>
-    <div class="content grid__item --start-8 --span-4 --align-center">
-      <h3>{{ featuredWorks[2].title }}</h3>
-      <p>{{ featuredWorks[2].description }}</p>
-      <a href="{{ featuredWorks[2].cta.url }}" class="button" >
-        <span>{{ featuredWorks[2].cta.text }}</span>
-        {% render "svg/chevron-right.svg" %}
-      </a>
-    </div>
-  </article>
-</section>
+    </li>
+  {% endfor %}
+  </ul>
+  <p class="text --align-center space --bottom-flush --top-2xl">
+    <a href="/work" class="button --primary">
+      <span>View All</span>
+      {% render "svg/chevron-right.svg" %}
+    </a>
+  </p>
+</article>
+
+<hr id="contact" class="grid__item --span-12">
+
+{% render "cta.html", contact: contact %}
 
 {% style %}
+hr {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  margin-block: var(--space-xl-3xl) var(--space-4xl);
+}
+
+h2:not([class]) {
+  border: none;
+  font-style: italic;
+  --text-weight: 350;
+  letter-spacing: -0.02em;
+  margin-block: 0 var(--space-xl);
+  position: relative;
+  width: max-content;
+}
+
 .hero {
-  min-height: calc(100vh - 124px);
-  grid-template-rows: max-content;
+  min-height: 78vh;
+  width: min(680px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
 
-  & p {
-    margin-top: 10vmin;
-    margin-bottom: var(--space-xl-2xl);
+  & .head {
+    width: clamp(min(18.375rem, 100%), 13.9451rem + 21.4783vi, 33.8125rem); /* 294-541 */
+    max-width: 100%;
+    margin-inline: auto;
+    margin-top: 8vh;
 
-    > span { --color-text: hsl(var(--color-primary)); }
-    @media (min-width: 45em) { grid-column-end: span 9; }
-    @media (min-width: 90em) { grid-column-end: span 7; }
+    * { margin-block: 0; }
+
+    .eyebrow, .subhead {
+      font-style: italic;
+      --text-weight: 250;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .headline {
+      font-variation-settings: "wght" 450, "SOFT" 100, "WONK" 1;
+      letter-spacing: -0.03em;
+      display: block;
+      text-align: center;
+      font-size: clamp(2.875rem, 2.3318rem + 2.6339vi, 4.7681rem); /* 46-76.29 */
+    }
+
+    .eyebrow {
+      font-size: clamp(2.3325rem, 1.9071rem + 2.0626vi, 3.815rem); /* 37.32-61.04 */
+    }
+
+    .subhead {
+      font-size: clamp(1.9438rem, 1.6258rem + 1.5417vi, 3.0519rem); /* 31.1-48.83 */
+      max-width: 320px;
+      text-align: right;
+      margin-left: auto;
+    }
   }
 
-  & button {
-    padding: var(--space-l);
-    height: var(--space-2xl);
-    width: max-content;
-    --color-text: hsl(var(--color-primary));
-  }
-
-  & span {
+  > p {
+    max-width: 470px;
     margin-left: auto;
+    margin-top: var(--space-2xl);
+    padding-inline: var(--space-s);
+  }
+
+  > .button {
+    margin-inline: auto;
     margin-top: auto;
-    margin-bottom: 5vh;
+    font-style: italic;
+    --text-weight: 400;
+  }
+}
+
+.about {
+  width: min(680px, 100%);
+  margin-inline: auto;
+
+  & h2::after {
+    content: '';
+    background-image: url('/assets/images/sparkles.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 92.63px;
+    position: absolute;
+    top: -70px;
+    right: -38px;
+  }
+
+  & strong {
+    --text-weight: 650;
+  }
+
+  & .content {
+    max-width: 560px;
+    margin-left: auto;
+
+    & p {
+      margin-bottom: var(--space-l);
+    }
+
+    & img {
+      margin-inline: auto;
+      display: block;
+      margin-top: var(--space-2xl);
+    }
   }
 }
 
 .featured-works {
-  @media (max-width: 44.999em) {
-    row-gap: var(--space-4xl);
-    margin-top: var(--space-4xl);
+  width: min(920px, 100%);
+  margin-inline: auto;
+
+  & h2::after {
+    content: '';
+    background-image: url('/assets/images/sparkles-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 38.93px;
+    position: absolute;
+    top: -18px;
+    right: -78px;
   }
 
-  > article {
-    @media (min-width: 45em) {
-      min-height: 100vh;
-    }
-
-    > .content {
-      & h3 {
-        margin-block: 0 var(--space-xs);
-        font-size: var(--step-2);
-        --text-weight: 650;
-      }
-
-      & p {
-        margin-bottom: var(--space-l);
-        font-family: var(--text-sans);
-        --color-text: hsl(var(--color-dark-mod-2));
-      }
-    }
+  & ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
   }
 
-  /* Optical adjustments */
-  > .hyped {
-    > .image img {
-      transform: rotate(-4deg);
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: rotate(0) scale(1.1);
-      }
-    }
-
-    @media (min-width: 45em) {
-      > .content {
-        margin-top: calc(var(--space-2xl-3xl) * -1);
-      }
-    }
-  }
-
-  > .bayani {
-    --color-sheet: hsl(var(--color-primary));
+  & .work-item {
+    display: flex;
+    column-gap: var(--space-l);
+    row-gap: var(--space-s);
 
     > .image {
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      gap: var(--space-l);
+      flex: 1 0 440px;
+      aspect-ratio: 440 / 275;
+      border: 1px solid hsl(var(--color-primary-shade));
 
-      @media (max-width: 44.999em) {
-        flex-direction: column;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: #FFFFFF;
+        display: block;
       }
-
-      @media (min-width: 45em) {
-        > :nth-child(1) { margin-top: -10vh; }
-        > :nth-child(2) { margin-top: -30vh; }
-      }
-
     }
 
-    > .content * {
-      --color-text: hsl(var(--color-light));
+    > .text {
+      margin-block: var(--space-3xs);
+
+      & * { margin: 0; }
+
+      & h3 {
+        font-size: var(--step-2);
+        font-variation-settings: "wght" 650, "SOFT" 100, "WONK" 1;
+        letter-spacing: -0.02em;
+      }
+
+      p, a { letter-spacing: -0.01em; }
+      & p { margin-top: var(--space-xs); }
+      & a { margin-top: var(--space-m); }
+    }
+
+    @media (max-width: 834px) {
+      flex-wrap: wrap;
+      max-width: 40ch;
+      margin-inline: auto;
+
+      > .image { flex-shrink: 1; }
     }
   }
 }

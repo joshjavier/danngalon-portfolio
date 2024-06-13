@@ -1,0 +1,15 @@
+<article class="cta grid__item --span-12">
+  <h2 class="title">Need a hand with a project?</h2>
+  <p class="description">Let’s chat! Always down to brainstorm some creative magic.</p>
+  <p class="buttons">
+    <a href="{{ contact.linkedin.url }}" class="button --primary text --weight-650">
+      <span>Connect with me on&nbsp;LinkedIn</span>
+      {% render "svg/linkedin.svg" %}
+    </a>
+
+    <a href="{{ contact.email | prepend: 'mailto:' | hexEncode }}" class="button --primary --outlined  text --weight-350">
+      <span>Send an email</span>
+      {% render "svg/mail.svg" %}
+    </a>
+  </p>
+</article>
