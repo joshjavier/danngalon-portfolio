@@ -14,15 +14,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {%- if noindex -%}
+    {%- if noindex %}
     <meta name="robots" content="noindex, nofollow">
-    {%- endif -%}
+    {% endif -%}
 
-    {%- if canonical -%}
+    {%- if canonical %}
     <link rel="canonical" href="{{ canonical }}">
-    {%- else -%}
+    <meta property="og:url" content="{{ canonical }}" />
+    {% else %}
     <link rel="canonical" href="{{ env.baseUrl }}{{ page.url }}">
-    {%- endif -%}
+    <meta property="og:url" content="{{ env.baseUrl }}{{ page.url }}" />
+    {% endif -%}
+
+    <meta property="og:title" content="{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ env.baseUrl }}/assets/images/{% if ogImage %}{{ ogImage }}{% else %}opengraph-default.jpg{% endif %}" />
 
     <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
     <link rel="icon" type="image/svg+xml" href="/assets/images/icons/favicon.svg">
