@@ -36,7 +36,12 @@ featuredWorks:
 
 <hr id="about" class="grid__item --span-12">
 
-<article class="about grid__item --span-12">
+<article
+  class="about grid__item --span-12"
+  data-sal="slide-up"
+  data-sal-easing="ease-out-expo"
+  data-sal-duration="1500"
+>
   <h2>About me</h2>
   <div class="content">
     <p><strong>Lucky enough to have always enjoyed wielding words, I built a career around them.</strong></p>
@@ -58,7 +63,12 @@ featuredWorks:
       {%- assign icon = "svg/chevron-right.svg" -%}
     {%- endif -%}
 
-    <li class="work-item">
+    <li
+      class="work-item"
+      data-sal="fade"
+      data-sal-easing="ease-out-expo"
+      data-sal-duration="1500"
+    >
       <div class="image">
         {% image item.image, "" %}
       </div>
