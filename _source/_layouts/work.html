@@ -146,15 +146,15 @@ stylesheet: vendor/swiper-bundle.min.css
   overflow: unset;
 
   & .swiper-slide {
-    width: max-content;
-    max-width: 60%;
-    min-width: 320px;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    border: 1px solid hsl(var(--color-primary-shade));
 
     > * {
       height: 100%;
       width: auto;
       object-fit: cover;
-      border: 1px solid hsl(var(--color-primary-shade));
     }
   }
 
