@@ -15,15 +15,8 @@ tags:
   - Brand/Acquisition
 order: 1
 reel:
-  - type: video
-    path: DumexDugro_WhyMomsChooseDugro_Campaign.mp4
-  - type: image
-    path: campaigns/Dumex Microsite.png
+  - DumexDugro_WhyMomsChooseDugro_Campaign.mp4
+  - campaigns/Dumex Microsite.png
 ---
 
 Dumex wanted a video that rounds up the best responses garnered from their “Spread Your Love for Dumex Dugro” contest. The output has been re-used for feed content and repurposed for ads after initial posting.
-
-{% reel %}
-  {% video "DumexDugro_WhyMomsChooseDugro_Campaign.mp4" %}
-  {% image "campaigns/Dumex Microsite.png", "" %}
-{% endreel %}

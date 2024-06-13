@@ -13,10 +13,8 @@ category: Campaigns
 tags:
   - Recruitment
 order: 5
+reel:
+  - MAS Graduate Officers Series.mp4
 ---
 
 The Monetary Authority of Singapore (MAS) wanted to promote their Graduate Officers Programme by showcasing the experiences of graduates transitioning through various levels of responsibility.
-
-{% reel %}
-  {% video "MAS Graduate Officers Series.mp4" %}
-{% endreel %}

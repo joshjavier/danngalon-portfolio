@@ -16,13 +16,14 @@ stylesheet: vendor/swiper-bundle.min.css
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        {% for slide in reel %}
+        {%- for slide in reel %}
         <div class="swiper-slide">
-          {% if slide.type == "video" %}
-          {% video slide.path %}
-          {% else %}
-          {% image slide.path, "" %}
-          {% endif %}
+          {%- assign type = slide | split: "." | last %}
+          {%- if type == "mp4" %}
+          {%- video slide %}
+          {%- else %}
+          {%- image slide, "" %}
+          {%- endif %}
         </div>
         {% endfor %}
       </div>
@@ -30,8 +31,8 @@ stylesheet: vendor/swiper-bundle.min.css
       <div class="swiper-pagination"></div>
 
       <!-- If we need navigation buttons -->
-      <!-- <div class="swiper-button-prev"></div> -->
-      <!-- <div class="swiper-button-next"></div> -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
 
@@ -131,21 +132,41 @@ stylesheet: vendor/swiper-bundle.min.css
 }
 
 .carousel {
-  height: clamp(11.625rem, 6.3522rem + 25.5652vi, 30rem); /* 186-480 */
+  height: calc(24px + clamp(11.625rem, 6.3522rem + 25.5652vi, 30rem)); /* 186-480 */
   margin-block: var(--space-l-2xl);
 }
 
 .swiper {
+  --swiper-pagination-color: hsl(var(--color-caution));
+  --swiper-pagination-bullet-size: var(--space-2xs);
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: unset;
 
   & .swiper-slide {
     width: max-content;
     max-width: 60%;
+    min-width: 320px;
 
     > * {
       height: 100%;
       width: auto;
+      object-fit: cover;
+    }
+  }
+
+  & .swiper-pagination {
+    position: unset;
+  }
+
+  & .swiper-button-next,
+  & .swiper-button-prev {
+    --swiper-navigation-sides-offset: var(--space-s-l);
+
+    @media (max-width: 480px) {
+      display: none;
     }
   }
 }

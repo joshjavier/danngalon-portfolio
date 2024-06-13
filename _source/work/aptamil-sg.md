@@ -14,6 +14,10 @@ category: Campaigns
 tags:
   - Brand/Acquisition
 order: 3
+reel:
+  - Aptamil Campaign Video.mp4
+  - Aptamil-Social Video.mp4
+  - campaigns/Image 3.png
 ---
 
 When Aptamil Singapore (AptaAdvantage) called for a branding campaign that would highlight *Aptamil Immuno-Nutrients,* it was answered with a complete rollout that stands out from its competitors.
@@ -21,9 +25,3 @@ When Aptamil Singapore (AptaAdvantage) called for a branding campaign that would
 Getting the message of nutrition and immunity across was a matter of using local humour and getting parents engaged with what they prioritize the most: *Keeping their children safe, healthy, and happy.*
 
 The results from the campaign were repurposed for social posts and ads, as answers from the poll made for great parenting insights that served beneficial for both audiences and brand.
-
-{% reel %}
-  {% video "Aptamil Campaign Video.mp4" %}
-  {% video "Aptamil-Social Video.mp4" %}
-  {% image "campaigns/Image 3.png", "" %}
-{% endreel %}
