@@ -23,6 +23,7 @@ element styles
 html {
   min-height: 100dvh;
   background-color: var(--color-sheet);
+  scroll-behavior: smooth;
 }
 
 body {
