@@ -3,6 +3,7 @@
 js entry point
 ---------------------------------------------------------------------------- */
 import Swiper from 'swiper/bundle';
+import sal from 'sal.js';
 import animateOnScroll from './_elements/animate-on-scroll.js';
 import ScrollSentinel from './_elements/scroll-sentinel.js';
 import SmallDetails from './_elements/small-details.js';
@@ -22,4 +23,10 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 'auto',
   spaceBetween: 40,
+});
+
+// Initialize Sal
+sal({
+  threshold: 0.1,
+  once: false,
 });

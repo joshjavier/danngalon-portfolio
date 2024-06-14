@@ -131,7 +131,7 @@
 
   /* font stacks via https://modernfontstacks.com */
   --text-serif: Fraunces, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-  --text-sans: Urbanist, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --text-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   --text-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 
   --text-main: var(--text-serif);
