@@ -10,13 +10,24 @@ description: A showcase of my best work, ranging from articles, essays, marketin
 
 <section class="grid__item --span-12">
   <div class="section-header">
-    <h2>Articles</h2>
+    <h2
+      data-sal="slide-right"
+      data-sal-duration="1500"
+      data-sal-easing="ease-out-expo"
+    >
+      Articles
+    </h2>
     <hr>
   </div>
 
   <ul>
     {%- for article in articles %}
-      <li class="work-card">
+      <li
+        class="work-card"
+        data-sal="fade"
+        data-sal-easing="ease-out-expo"
+        data-sal-duration="1500"
+      >
         <div class="image">
           {% assign imagePath = article.image | prepend: "articles/" %}
           {% image imagePath, "" %}
@@ -32,13 +43,24 @@ description: A showcase of my best work, ranging from articles, essays, marketin
 
 <section class="grid__item --span-12">
   <div class="section-header">
-    <h2>Campaigns</h2>
+    <h2
+      data-sal="slide-right"
+      data-sal-duration="1500"
+      data-sal-easing="ease-out-expo"
+    >
+      Campaigns
+    </h2>
     <hr>
   </div>
 
   <ul>
   {%- for campaign in collections.campaign %}
-    <li class="work-card">
+    <li
+      class="work-card"
+      data-sal="fade"
+      data-sal-easing="ease-out-expo"
+      data-sal-duration="1500"
+    >
       <div class="image">
         {% assign imagePath = campaign.data.image | prepend: "campaigns/" %}
         {% image imagePath, "" %}
@@ -53,13 +75,24 @@ description: A showcase of my best work, ranging from articles, essays, marketin
 
 <section class="grid__item --span-12">
   <div class="section-header">
-    <h2>Special Projects</h2>
+    <h2
+      data-sal="slide-right"
+      data-sal-duration="1500"
+      data-sal-easing="ease-out-expo"
+    >
+      Special Projects
+    </h2>
     <hr>
   </div>
 
   <ul>
   {%- for specialProject in collections.specialProject %}
-    <li class="work-card">
+    <li
+      class="work-card"
+      data-sal="fade"
+      data-sal-easing="ease-out-expo"
+      data-sal-duration="1500"
+      >
       <div class="image">
         {% assign imagePath = specialProject.data.image | prepend: "special-projects/" %}
         {% image imagePath, "" %}
